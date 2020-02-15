@@ -2,7 +2,7 @@
   "name": "news-explorer-frontend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "script.js",
   "scripts": {
     "build": "rimraf dist && webpack --mode production",
     "start": "webpack-dev-server --mode production --open",
