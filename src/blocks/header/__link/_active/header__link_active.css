@@ -1,0 +1,15 @@
+.header__link.header__link_active {
+  position: relative;
+  color: #fff;
+  cursor: auto;
+}
+
+.header__link_active::after {
+  position: absolute;
+  bottom: -21px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+}

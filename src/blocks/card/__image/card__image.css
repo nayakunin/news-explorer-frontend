@@ -1,0 +1,9 @@
+.card__image {
+  background-image: url('../../../images/image_08.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 24px 24px 0 0;
+  width: calc(100% - 24px);
+  height: 272px;
+}

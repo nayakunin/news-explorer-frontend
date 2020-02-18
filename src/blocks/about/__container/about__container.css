@@ -1,0 +1,5 @@
+.about__container {
+  display: grid;
+  grid-template-columns: 464px 600px;
+  column-gap: 56px;
+}

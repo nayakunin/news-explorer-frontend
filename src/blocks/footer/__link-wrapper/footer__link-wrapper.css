@@ -1,0 +1,9 @@
+.footer__link-wrapper:last-of-type {
+  margin-left: 30px;
+}
+
+.footer__link-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

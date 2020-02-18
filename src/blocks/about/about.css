@@ -1,0 +1,11 @@
+@import url('./__container/about__container.css');
+@import url('./__image-container/about__image-container.css');
+@import url('./__info-container/about__info-container.css');
+@import url('./__info/about__info.css');
+@import url('./__text/about__text.css');
+@import url('./__title/about__title.css');
+@import url('./__image/about__image.css');
+
+.about {
+  padding: 80px 104px;
+}

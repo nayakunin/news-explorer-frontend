@@ -1,0 +1,15 @@
+.search__input-container {
+  margin-top: 64px;
+  background: #FFFFFF;
+  border: 1px solid #D1D2D6;
+  box-sizing: border-box;
+  border-radius: 100px;
+  height: 64px;
+  width: 100%;
+
+  padding-left: 24px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}

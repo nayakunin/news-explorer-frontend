@@ -1,0 +1,6 @@
+.results__cards-container {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}

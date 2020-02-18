@@ -1,0 +1,15 @@
+@import url('./__tilte/results__title.css');
+@import url('./__card/results__card.css');
+@import url('./__cards-container/results__cards-container.css');
+@import url('./__button-container/results__button-container.css');
+@import url('./__button/results__button.css');
+@import url('./__preloader/results__preloader.css');
+@import url('./__preloader-container/results__preloader-container.css');
+@import url('./__preloader-text/results__preloader-text.css');
+@import url('./__subtitle/results__subtitle.css');
+@import url('./__status-image/results__status-image.css');
+
+.results {
+  padding: 80px 104px;
+  background: #F5F6F7;
+}

@@ -1,0 +1,4 @@
+.header__left {
+  display: flex;
+  justify-content: flex-end;
+}

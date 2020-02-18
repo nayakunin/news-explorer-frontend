@@ -1,0 +1,15 @@
+@import url('./_active/card__button-popup_active.css');
+
+.card__button-popup {
+  margin: 0 5px 0 0;
+  height: 40px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 0 12px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  display: none;
+}

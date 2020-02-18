@@ -1,0 +1,6 @@
+.search__input-wrapper {
+  width: 376px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

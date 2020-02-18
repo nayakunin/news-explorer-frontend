@@ -1,0 +1,8 @@
+@import url('./_visible/results__preloader-container_visible.css');
+
+.results__preloader-container {
+  display: none;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
