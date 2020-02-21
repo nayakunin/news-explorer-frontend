@@ -239,8 +239,10 @@
         <form class="popup__form">
           <label class="popup__input-label" for="login-email">Email</label>
           <input type="email" name="email" class="popup__input popup__input_email" id="login-email">
+          <p class="popup__input-error popup__input-error_email">Неправильный формат email</p>
           <label class="popup__input-label" for="login-password">Пароль</label>
           <input type="password" name="password" class="popup__input popup__input_password" id="login-password">
+          <p class="popup__input-error popup__input-error_password">Ошибка</p>
           <button type="submit" class="button button_submit popup__button">Войти</button>
         </form>
         <p class="popup__text">или <a href="#" class="popup__link">Зарегистрироваться</a></p>
@@ -250,10 +252,13 @@
         <form class="popup__form">
           <label class="popup__input-label" for="reg-email">Email</label>
           <input type="email" name="email" class="popup__input popup__input_email" id="reg-email">
+          <p class="popup__input-error popup__input-error_email">Ошибка</p>
           <label class="popup__input-label" for="reg-password">Пароль</label>
           <input type="password" name="password" class="popup__input popup__input_password" id="reg-password">
+          <p class="popup__input-error popup__input-error_password">Ошибка</p>
           <label class="popup__input-label" for="reg-username">Имя</label>
           <input type="text" name="username" class="popup__input popup__input_username" id="reg-username">
+          <p class="popup__input-error popup__input-error_username">Ошибка</p>
           <button type="submit" class="button button_submit popup__button">Зарегистрироваться</button>
         </form>
         <p class="popup__text">или <a href="#" class="popup__link">Войти</a></p>

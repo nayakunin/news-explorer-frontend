@@ -8,6 +8,7 @@
 @import url('./__link/popup__link.css');
 @import url('./__text/popup__text.css');
 @import url('./__title/popup__title.css');
+@import url('./__input-error/popup__input-error.css');
 
 .popup {
   position: absolute;
