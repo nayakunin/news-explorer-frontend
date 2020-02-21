@@ -9,6 +9,7 @@
 @import url('./blocks/about/about.css');
 @import url('./blocks/footer/footer.css');
 @import url('./blocks/preloader/preloader.css');
+@import url('./blocks/popup/popup.css');
 
 body {
   font-family: 'Roboto';
