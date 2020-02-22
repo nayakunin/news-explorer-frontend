@@ -38,14 +38,14 @@
   <section class="results">
     <div class="results__container">
       <div
-        class="results__preloader-container results__preloader-container_loading results__preloader-container_visible">
+        class="results__preloader-container results__preloader-container_loading results__preloader-container_hidden">
         <div class="results__status-image">
           <i class="preloader results__preloader"></i>
         </div>
         <p class="results__preloader-text">Идёт поиск новостей</p>
       </div>
       <div
-        class="results__preloader-container results__preloader-container_not-found results__preloader-container_visible">
+        class="results__preloader-container results__preloader-container_not-found results__preloader-container_hidden">
         <div class="results__status-image">
           <img src="./images/not-found_v1.png" alt="не найдено">
         </div>
@@ -222,7 +222,7 @@
       </div>
     </div>
   </footer>
-  <div class="popup">
+  <div class="popup popup_hidden">
     <div class="popup__container">
       <div class="popup__close-btn">
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -234,19 +234,19 @@
             fill="white" />
         </svg>
       </div>
-      <div class="popup__content popup__content_login">
+      <div class="popup__content popup__content_login popup__content_hidden">
         <h2 class="popup__title">Вход</h2>
         <form class="popup__form">
           <div class="popup__inputs-wrapper">
             <div class="popup__input-container">
               <label class="popup__input-label" for="login-email">Email</label>
-              <input type="email" name="email" class="popup__input popup__input_email" id="login-email">
+              <input type="email" name="email" class="popup__input popup__input_email" id="login-email" placeholder="Введите почту">
               <p class="popup__input-error popup__input-error_email popup__input-error_active">Неправильный формат email
               </p>
             </div>
             <div class="popup__input-container">
               <label class="popup__input-label" for="login-password">Пароль</label>
-              <input type="password" name="password" class="popup__input popup__input_password" id="login-password">
+              <input type="password" name="password" class="popup__input popup__input_password" id="login-password" placeholder="Введите пароль">
               <p class="popup__input-error popup__input-error_password popup__input-error_active">Ошибка</p>
             </div>
           </div>
@@ -262,29 +262,31 @@
           <div class="popup__inputs-wrapper">
             <div class="popup__input-container">
               <label class="popup__input-label" for="reg-email">Email</label>
-              <input type="email" name="email" class="popup__input popup__input_email" id="reg-email">
-              <p class="popup__input-error popup__input-error_email">Ошибка</p>
+              <input type="email" name="email" class="popup__input popup__input_email" id="reg-email" placeholder="Введите почту">
+              <p class="popup__input-error popup__input-error_active popup__input-error_email">Ошибка</p>
             </div>
             <div class="popup__input-container">
               <label class="popup__input-label" for="reg-password">Пароль</label>
-              <input type="password" name="password" class="popup__input popup__input_password" id="reg-password">
-              <p class="popup__input-error popup__input-error_password">Ошибка</p>
+              <input type="password" name="password" class="popup__input popup__input_password" id="reg-password" placeholder="Введите пароль">
+              <p class="popup__input-error popup__input-error_active popup__input-error_password">Ошибка</p>
             </div>
             <div class="popup__input-container">
               <label class="popup__input-label" for="reg-username">Имя</label>
-              <input type="text" name="username" class="popup__input popup__input_username" id="reg-username">
-              <p class="popup__input-error popup__input-error_username">Ошибка</p>
+              <input type="text" name="username" class="popup__input popup__input_username" id="reg-username" placeholder="Введите своё имя">
+              <p class="popup__input-error popup__input-error_active popup__input-error_username">Ошибка</p>
             </div>
           </div>
           <div class="popup__button-container">
-            <button type="submit" class="button button_submit popup__button">Зарегистрироваться</button>
+            <button type="submit" class="button button_default button_submit popup__button">Зарегистрироваться</button>
           </div>
         </form>
         <p class="popup__text">или <a href="#" class="popup__link">Войти</a></p>
       </div>
-      <div class="popup__content popup__content_info popup__content_hidden">
+      <div class="popup__content popup__content_info">
         <h2 class="popup__title">Пользователь успешно зарегистрирован</h2>
-        <a href="#" class="popup__link">Выполнить вход</a>
+        <div class="popup__link-container">
+          <a href="#" class="popup__link">Выполнить вход</a>
+        </div>
       </div>
     </div>
   </div>

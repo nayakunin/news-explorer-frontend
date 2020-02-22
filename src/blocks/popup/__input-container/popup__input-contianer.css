@@ -5,6 +5,6 @@
   margin-bottom: 30px;
 }
 
-.popup__input-container:nth-of-type(2) {
+.popup__input-container:last-of-type {
   margin-bottom: 0;
 }

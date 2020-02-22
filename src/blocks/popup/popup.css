@@ -12,6 +12,8 @@
 @import url('./__input-container/popup__input-contianer.css');
 @import url('./__inputs-wrapper/popup__inputs-wrapper.css');
 @import url('./__button-container/popup__button-container.css');
+@import url('./__link-container/popup__link-container.css');
+@import url('./_hidden/popup_hidden.css');
 
 .popup {
   position: absolute;

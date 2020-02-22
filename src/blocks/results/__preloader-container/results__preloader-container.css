@@ -1,7 +1,7 @@
-@import url('./_visible/results__preloader-container_visible.css');
+@import url('./_hidden/results__preloader-container_hidden.css');
 
 .results__preloader-container {
-  display: none;
+  display: flex;
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
