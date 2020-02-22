@@ -1,0 +1,9 @@
+.popup__button {
+  width: 100%;
+  background: #2F71E5;
+  color: #FFFFFF;
+}
+
+.popup__button:hover {
+  background: #347EFF;
+}

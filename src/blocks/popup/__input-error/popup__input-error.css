@@ -1,4 +1,18 @@
 @import url('./_email/popup__input-error_email.css');
 @import url('./_password/popup__input-error_password.css');
 @import url('./_username/popup__input-error_username.css');
+@import url('./_active/popup__input-error_active.css');
 
+.popup__input-error {
+  display: none;
+  position: absolute;
+  bottom: -15px;
+  margin: 0;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FF0000;
+}
