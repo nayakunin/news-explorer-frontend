@@ -1,5 +1,5 @@
 .search__input {
-  width: 99%;
+  width: 100%;
   border: none;
   padding: 0;
   height: 22px;
@@ -10,4 +10,8 @@
   font-size: 16px;
   line-height: 22px;
   color: #1A1B22;
+}
+
+.search__input:focus {
+  outline: none;
 }
