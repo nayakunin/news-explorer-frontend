@@ -8,3 +8,9 @@
   align-items: center;
   list-style: none;
 }
+
+@media only screen and (max-width: 768px) {
+  .header__links-container {
+    margin-right: 16px;
+  }
+}

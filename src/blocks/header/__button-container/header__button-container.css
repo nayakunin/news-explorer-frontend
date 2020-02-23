@@ -1,3 +1,6 @@
+@import url('./_auth/header__button-container_auth.css');
+@import url('./_noauth/header__button-container_noauth.css');
+@import url('./_hidden/header__button-container_hidden.css');
 .header__button-container {
   display: flex;
   flex-direction: column;

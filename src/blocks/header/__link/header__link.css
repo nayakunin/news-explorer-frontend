@@ -1,4 +1,7 @@
 @import url("./_active/header__link_active.css");
+@import url('./_hidden/header__link_hidden.css');
+@import url('./_auth/header__link_auth.css');
+
 
 .header__link {
   font-family: Roboto;
@@ -9,4 +12,10 @@
   line-height: 24px;
   color: #b6bcbf;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .header__link {
+    margin-left: 16px;
+  }
 }

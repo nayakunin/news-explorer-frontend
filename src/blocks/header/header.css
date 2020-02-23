@@ -15,8 +15,15 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0 104px 0;
+  padding: 0 104px;
 
   background: rgba(196, 196, 196, 0.01);
   box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    width: calc(100% - 80px);
+    padding: 0 40px;
+  }
 }
