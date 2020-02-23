@@ -1,4 +1,4 @@
-@import url('./_active/card__button-popup_active.css');
+@import url('./_hidden/card__button-popup_hidden.css');
 
 .card__button-popup {
   margin: 0 5px 0 0;
@@ -10,6 +10,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  display: none;
 }
