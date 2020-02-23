@@ -10,5 +10,12 @@
 
 .footer {
   height: 80px;
-  padding: 0 104px 0;
+  padding: 0 104px;
+}
+
+@media only screen and (max-width: 768px) {
+  .footer {
+    height: 64px;
+    padding: 0 40px;
+  }
 }

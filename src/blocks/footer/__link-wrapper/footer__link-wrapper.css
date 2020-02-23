@@ -7,3 +7,9 @@
   flex-direction: column;
   justify-content: center;
 }
+
+@media only screen and (max-width: 768px) {
+  .footer__link-wrapper:last-of-type {
+    margin-left: 15px;
+  }
+}
