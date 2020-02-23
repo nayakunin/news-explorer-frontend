@@ -8,6 +8,7 @@
 @import url('./__image/card__image.css');
 @import url('./__info/card__info.css');
 @import url('./__title/card__title.css');
+@import url("./__text-container/card__text-container.css");
 
 .card {
   background: #FFFFFF;

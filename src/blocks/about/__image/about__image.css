@@ -3,3 +3,10 @@
   height: 464px;
   border-radius: 50%;
 }
+
+@media only screen and (max-width: 1024px) {
+  .about__image {
+    width: 380px;
+    height: 380px;
+  }
+}

@@ -1,5 +1,11 @@
 .about__container {
   display: grid;
-  grid-template-columns: 464px 600px;
+  grid-template-columns: 464px 1fr;
   column-gap: 56px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .about__container {
+    grid-template-columns: 380px 1fr;
+  }
 }

@@ -3,4 +3,21 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .card__button-container {
+    top: 16px;
+    right: 16px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .card__button-container {
+    top: 8px;
+    right: 8px;
+  }
 }
