@@ -7,3 +7,10 @@
   line-height: 64px;
   color: #FFFFFF;
 }
+
+@media only screen and (max-width: 768px) {
+  .search__title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+}

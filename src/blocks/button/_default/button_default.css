@@ -1,6 +1,5 @@
 .button_default {
   border: none;
-  height: 64px;
 
   display: flex;
   flex-direction: row;

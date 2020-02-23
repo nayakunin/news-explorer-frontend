@@ -1,8 +1,15 @@
 .search__button {
   background: #2F71E5;
+  height: 64px;
   color: #fff;
   position: absolute;
   top: -1px;
   right: -1px;
   width: 168px;
+}
+
+@media only screen and (max-width: 768px) {
+  .search__button {
+    height: 56px;
+  }
 }

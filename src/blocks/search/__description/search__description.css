@@ -1,5 +1,5 @@
 .search__description {
-  margin-top: 32px;
+  margin: 32px 0 0;
 
   font-family: Roboto;
   font-style: normal;
@@ -7,4 +7,12 @@
   font-size: 18px;
   line-height: 24px;
   color: #FFFFFF;
+}
+
+@media only screen and (max-width: 768px) {
+  .search__description {
+    margin-top: 16px;
+    font-size: 18px;
+    line-height: 24px;
+  }
 }
