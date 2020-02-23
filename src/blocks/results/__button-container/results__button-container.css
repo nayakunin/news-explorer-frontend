@@ -3,3 +3,9 @@
   display: flex;
   justify-content: center;
 }
+
+@media only screen and (max-width: 768px) {
+  .results__button-container {
+    margin-top: 32px;
+  }
+}
