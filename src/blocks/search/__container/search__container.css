@@ -10,3 +10,10 @@
     width: 445px;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .search__container {
+    padding-top: 86px;
+    width: 288px;
+  }
+}

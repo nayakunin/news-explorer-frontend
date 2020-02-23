@@ -21,3 +21,10 @@
     right: 8px;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .card__button-container {
+    top: 16px;
+    right: 16px;
+  }
+}

@@ -1,13 +1,7 @@
 .search__input-container {
   margin-top: 64px;
-  background: #FFFFFF;
-  border: 1px solid #D1D2D6;
-  box-sizing: border-box;
-  border-radius: 100px;
   height: 64px;
   width: 100%;
-
-  padding-left: 24px;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -18,5 +12,14 @@
   .search__input-container {
     margin-top: 48px;
     height: 56px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .search__input-container {
+    margin-top: 120px;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: unset;
   }
 }

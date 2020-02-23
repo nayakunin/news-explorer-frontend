@@ -5,6 +5,7 @@
 @import url("./__link-text/header__link-text.css");
 @import url("./__links-container/header__links-container.css");
 @import url("./__logo-container/header__logo-container.css");
+@import url('./__menu-button-container/header__menu-button-container.css');
 
 .header {
   width: calc(100% - 208px);
@@ -25,5 +26,12 @@
   .header {
     width: calc(100% - 80px);
     padding: 0 40px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .header {
+    width: calc(100% - 32px);
+    padding: 0 16px;
   }
 }

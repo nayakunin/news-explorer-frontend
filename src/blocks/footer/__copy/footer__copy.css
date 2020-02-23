@@ -1,0 +1,6 @@
+@media only screen and (max-width: 500px) {
+  .footer__copy {
+    margin-top: 40px;
+    order: 2;
+  }
+}

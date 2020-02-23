@@ -10,3 +10,10 @@
     margin-top: 32px;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .results__cards-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
