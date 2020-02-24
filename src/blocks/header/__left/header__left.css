@@ -38,5 +38,9 @@
     top: 0;
     left: 0;
   }
+
+  .body_dropdown-active.body_noauth .header__left::before {
+    height: calc(100% - 56px);
+  }
 }
 
