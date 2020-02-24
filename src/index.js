@@ -23,8 +23,34 @@ function truncate(element, maxLength) {
   return truncated;
 }
 
+const body = document.getElementsByClassName('body')[0];
 const cards = document.getElementsByClassName('card');
 cards.forEach((card) => {
+  const button = card.getElementsByClassName('card__button')[0];
+  const noAuthMessage = card.getElementsByClassName('card__button-popup')[0];
+
+  button.addEventListener('click', (event) => {
+    if (body.classList.contains('body_noauth')) {
+      noAuthMessage.classList.remove('card__button-popup_hidden');
+    }
+  });
   const description = card.getElementsByClassName('card__description')[0];
   description.innerText = truncate(description, maxSymbols);
 })
+
+const menuButton = document.getElementsByClassName('header__menu-button-container')[0];
+const headerDropdownBg = document.getElementsByClassName('header__dropdown-bg')[0];
+
+function fixScrollPos() {
+  const x = window.scrollX;
+  const y = window.scrollY;
+}
+
+headerDropdownBg.addEventListener('click', (event) => {
+  header.classList.toggle('header_dropdown-active');
+})
+
+menuButton.addEventListener('click', (event) => {
+  body.classList.toggle('body_dropdown-active');
+})
+

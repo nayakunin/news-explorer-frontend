@@ -1,11 +1,12 @@
 @import url('./_hidden/card__button-popup_hidden.css');
 
 .card__button-popup {
-  margin: 0 5px 0 0;
   height: 40px;
   background: #FFFFFF;
   border-radius: 8px;
   padding: 0 12px 0;
+  opacity: 1;
+  transition: .3s all;
 
   display: flex;
   justify-content: center;

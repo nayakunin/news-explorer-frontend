@@ -8,8 +8,9 @@
   <title>News Explorer</title>
 </head>
 
-<body>
+<body class="body body_noauth">
   <header class="header">
+    <div class="header__dropdown-bg"></div>
     <div class="header__logo-container">
       <h3 class="logo">NewsExplorer</h3>
     </div>
@@ -18,11 +19,11 @@
         <li class="header__link header__link_active"><a href="#" class="header__link-text">Главная</a></li>
         <li class="header__link header__link_auth"><a href="#" class="header__link-text">Сохраненные статьи</a></li>
       </ul>
-      <div class="header__button-container header__button-container_noauth header__button-container_hidden">
-        <button class="button header__button header__button_unauth">Авторизоваться</button>
+      <div class="header__button-container header__button-container_noauth">
+        <button class="button header__button header__button_noauth">Авторизоваться</button>
       </div>
       <div class="header__button-container header__button-container_auth">
-        <button class="button header__button header__button_unauth">
+        <button class="button header__button header__button_auth">
           <span class="header__username">Грета</span>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -33,10 +34,22 @@
       </div>
     </div>
     <div class="header__menu-button-container">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="4" y="8" width="16" height="2" fill="white" />
-        <rect x="4" y="14" width="16" height="2" fill="white" />
-      </svg>
+      <div class="header__menu-button header__menu-button_open">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="8" width="16" height="2" fill="white" />
+          <rect x="4" y="14" width="16" height="2" fill="white" />
+        </svg>
+      </div>
+      <div class="header__menu-button header__menu-button_close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M13.4142 12L18.7071 17.2928L17.2929 18.7071L11.2929 12.7071C10.9024 12.3165 10.9024 11.6834 11.2929 11.2928L17.2929 5.29285L18.7071 6.70706L13.4142 12Z"
+            fill="white" />
+          <path
+            d="M10.8787 12L5.58577 17.2928L6.99999 18.7071L13 12.7071C13.3905 12.3165 13.3905 11.6834 13 11.2928L6.99999 5.29285L5.58577 6.70706L10.8787 12Z"
+            fill="white" />
+        </svg>
+      </div>
     </div>
   </header>
   <section class="search">
