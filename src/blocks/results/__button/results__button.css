@@ -3,4 +3,10 @@
   height: 64px;
   background: #FFFFFF;
   border-radius: 80px;
+  opacity: 1;
+  transition: .3s all;
+}
+
+.results__button:focus {
+  opacity: 0.9;
 }
