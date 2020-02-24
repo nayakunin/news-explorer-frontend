@@ -32,6 +32,12 @@ cards.forEach((card) => {
   button.addEventListener('click', (event) => {
     if (body.classList.contains('body_noauth')) {
       noAuthMessage.classList.remove('card__button-popup_hidden');
+    } else {
+      const inside = button.getElementsByClassName('card__button-inside')[0];
+      const outline = button.getElementsByClassName('card__button-outline')[0];
+
+      inside.classList.toggle('card__button-inside_active');
+      outline.classList.toggle('card__button-outline_active');
     }
   });
   const description = card.getElementsByClassName('card__description')[0];

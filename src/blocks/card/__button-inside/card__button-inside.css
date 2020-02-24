@@ -1,0 +1,5 @@
+@import url('./_active/card__button-inside_active.css');
+
+.card__button-inside {
+  fill: white;
+}
