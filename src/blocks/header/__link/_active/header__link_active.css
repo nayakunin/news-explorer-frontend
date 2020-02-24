@@ -6,12 +6,18 @@
 
 .header__link_active::after {
   position: absolute;
-  bottom: -21px;
+  bottom: -27px;
   left: 0;
   content: '';
   width: 100%;
   height: 3px;
   background-color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+  .header__link_active::after {
+    bottom: -21px;
+  }
 }
 
 @media only screen and (max-width: 600px) {

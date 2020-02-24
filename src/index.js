@@ -47,11 +47,6 @@ cards.forEach((card) => {
 const menuButton = document.getElementsByClassName('header__menu-button-container')[0];
 const headerDropdownBg = document.getElementsByClassName('header__dropdown-bg')[0];
 
-function fixScrollPos() {
-  const x = window.scrollX;
-  const y = window.scrollY;
-}
-
 headerDropdownBg.addEventListener('click', (event) => {
   header.classList.toggle('header_dropdown-active');
 })

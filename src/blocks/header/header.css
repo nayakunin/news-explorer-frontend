@@ -11,6 +11,7 @@
 
 .header {
   width: calc(100% - 208px);
+  height: 80px;
   position: absolute;
   top: 0;
   left: 0;
@@ -41,15 +42,17 @@
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .header {
-    width: calc(100% - 40px);
-    padding: 0 20px;
+    height: 66px;
+    width: calc(100% - 80px);
+    padding: 0 40px;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .header {
+    height: 56px;
     width: calc(100% - 32px);
     padding: 0 16px;
   }
