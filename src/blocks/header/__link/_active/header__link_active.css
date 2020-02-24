@@ -13,3 +13,9 @@
   height: 3px;
   background-color: #fff;
 }
+
+@media only screen and (max-width: 600px) {
+  .header__link_active::after {
+    display: none;
+  }
+}

@@ -1,10 +1,13 @@
-@import url("./_auth/header__button_auth.css");
-@import url("./_unauth/header__button_unauth.css");
-
 
 .header__button.button {
   border: 1px solid #FFFFFF;
   color: #FFF;
   background: rgba(0, 0, 0, 0);
   height: 48px;
+}
+
+@media only screen and (max-width: 600px) {
+  .header__button.button {
+    margin-top: 22px;
+  }
 }

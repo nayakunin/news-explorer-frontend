@@ -6,6 +6,8 @@
 @import url("./__links-container/header__links-container.css");
 @import url("./__logo-container/header__logo-container.css");
 @import url('./__menu-button-container/header__menu-button-container.css');
+@import url('./__menu-button/header__menu-button.css');
+@import url('./__dropdown-bg/header__dropdown-bg.css');
 
 .header {
   width: calc(100% - 208px);
@@ -19,7 +21,17 @@
   padding: 0 104px;
 
   background: rgba(196, 196, 196, 0.01);
-  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+}
+
+.header::after {
+  content: '';
+  width: 100%;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
 }
 
 @media only screen and (max-width: 1023px) {

@@ -1,5 +1,4 @@
 @import url("./_active/header__link_active.css");
-@import url('./_hidden/header__link_hidden.css');
 @import url('./_auth/header__link_auth.css');
 
 
@@ -17,5 +16,13 @@
 @media only screen and (max-width: 768px) {
   .header__link {
     margin-left: 16px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .header__link {
+    margin-left: 0;
+    color: #fff;
+    line-height: 56px;
   }
 }

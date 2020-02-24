@@ -1,0 +1,7 @@
+.body_auth .header__link.header__link_auth {
+  display: block;
+}
+
+.header__link.header__link_auth {
+  display: none;
+}

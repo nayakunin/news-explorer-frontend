@@ -1,0 +1,7 @@
+.body_auth .header__button-container.header__button-container_auth {
+  display: flex;
+}
+
+.header__button-container.header__button-container_auth {
+  display: none;
+}
