@@ -22,7 +22,7 @@
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .card__button-container {
     top: 16px;
     right: 16px;

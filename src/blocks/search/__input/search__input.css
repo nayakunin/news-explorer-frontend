@@ -1,5 +1,5 @@
 .search__input {
-  width: 100%;
+  width: calc(100% - 172px);
   border: none;
   padding: 0;
   height: 22px;
@@ -16,8 +16,7 @@
   outline: none;
 }
 
-
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .search__input {
     width: calc(100% - 48px);
   }

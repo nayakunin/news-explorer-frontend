@@ -22,14 +22,21 @@
   box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1023px) {
   .header {
     width: calc(100% - 80px);
     padding: 0 40px;
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 767px) {
+  .header {
+    width: calc(100% - 40px);
+    padding: 0 20px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
   .header {
     width: calc(100% - 32px);
     padding: 0 16px;

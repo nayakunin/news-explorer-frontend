@@ -19,7 +19,7 @@
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .search {
     height: 536px;
     background-repeat: no-repeat;

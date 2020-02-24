@@ -1,5 +1,11 @@
 .header__menu-button-container {
-  display: flex;
+  display: none;
   justify-content: center;
   flex-direction: column;
+}
+
+@media only screen and (max-width: 767px) {
+  .header__menu-button-container {
+    display: flex;
+  }
 }

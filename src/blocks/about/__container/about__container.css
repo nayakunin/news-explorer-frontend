@@ -10,14 +10,20 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 900px) {
+  .about__container {
+    grid-template-columns: 300px 1fr;
+  }
+}
+
+@media only screen and (max-width: 800px) {
   .about__container {
     grid-template-columns: 232px 1fr;
     column-gap: 32px;
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .about__container {
     grid-template-columns: unset;
     grid-template-rows: 272px;

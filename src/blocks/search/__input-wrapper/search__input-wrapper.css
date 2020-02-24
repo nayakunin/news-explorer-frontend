@@ -1,5 +1,5 @@
 .search__input-wrapper {
-  width: 376px;
+  width: 100%;
   background: #FFFFFF;
   border: 1px solid #D1D2D6;
   box-sizing: border-box;
@@ -11,17 +11,14 @@
   justify-content: center;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .search__input-wrapper {
-    height: 64px;
-    width: 250px;
+    height: 56px;
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .search__input-wrapper {
-    height: 56px;
-    width: 100%;
     margin-bottom: 16px;
   }
 }

@@ -5,12 +5,14 @@ import './images/not-found_v1.png';
 const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 let maxSymbols;
 
-if (vw >= 1440) {
+if (vw <= 500) {
   maxSymbols = 150;
-} else if (vw >= 1024) {
-  maxSymbols = 90;
-} else if (vw >= 768) {
+} else if (vw <= 768) {
   maxSymbols = 80;
+} else if (vw <= 1024) {
+  maxSymbols = 90;
+} else {
+  maxSymbols = 150;
 }
 
 function truncate(element, maxLength) {

@@ -8,7 +8,7 @@
   justify-content: center;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .footer__social-item {
     justify-content: flex-start;
   }

@@ -9,18 +9,21 @@
 @import url('./__social-item/footer__social-item.css');
 
 .footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 80px;
   padding: 0 104px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
   .footer {
     height: 64px;
     padding: 0 40px;
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .footer {
     height: unset;
     padding: 20px 16px;

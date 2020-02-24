@@ -4,14 +4,21 @@
   margin: auto;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1023px) {
   .search__container {
     padding-top: 104px;
-    width: 445px;
+    width: 450px;
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 767px) {
+  .search__container {
+    padding-top: 104px;
+    width: 450px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
   .search__container {
     padding-top: 86px;
     width: 288px;
