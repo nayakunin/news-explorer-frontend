@@ -1,0 +1,7 @@
+.popup__state_info .popup__content_info {
+  display: block;
+}
+
+.popup__content_info {
+  display: none;
+}

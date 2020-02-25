@@ -1,0 +1,7 @@
+.popup__state_register .popup__content_register {
+  display: block;
+}
+
+.popup__content_register {
+  display: none;
+}

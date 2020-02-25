@@ -14,13 +14,19 @@
 @import url('./__button-container/popup__button-container.css');
 @import url('./__link-container/popup__link-container.css');
 @import url('./_hidden/popup_hidden.css');
+@import url('./__close-btn-container/popup__close-btn-container.css');
+@import url('./__state/popup__state.css');
+
+.body_popup-active .popup {
+  display: flex;
+}
 
 .popup {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 2;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   width: 100vw;
@@ -36,4 +42,13 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  .popup {
+    z-index: unset;
+  }
+  .popup::before {
+    display: none;
+  }
 }

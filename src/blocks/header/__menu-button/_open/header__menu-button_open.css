@@ -2,6 +2,10 @@
   display: none;
 }
 
+.body_popup-active .header__menu-button_open {
+  display: none;
+}
+
 .header__menu-button_open {
   display: block;
 }
