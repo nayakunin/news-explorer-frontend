@@ -1,5 +1,3 @@
-@media only screen and (max-width: 600px) {
-  .body.body_popup-active {
-    position: fixed;
-  }
+.body.body_popup-active {
+  position: fixed;
 }

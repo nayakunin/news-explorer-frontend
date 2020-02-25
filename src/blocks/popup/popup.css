@@ -16,6 +16,7 @@
 @import url('./_hidden/popup_hidden.css');
 @import url('./__close-btn-container/popup__close-btn-container.css');
 @import url('./__state/popup__state.css');
+@import url('./__bg/popup__bg.css');
 
 .body_popup-active .popup {
   display: flex;
@@ -33,22 +34,8 @@
   height: 100vh;
 }
 
-.popup::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
 @media only screen and (max-width: 600px) {
   .popup {
     z-index: unset;
-  }
-  .popup::before {
-    display: none;
   }
 }

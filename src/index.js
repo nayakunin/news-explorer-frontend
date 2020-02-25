@@ -44,14 +44,38 @@ cards.forEach((card) => {
   description.innerText = truncate(description, maxSymbols);
 })
 
-const menuButton = document.getElementsByClassName('header__menu-button-container')[0];
+const menuButtonOpen = document.getElementsByClassName('header__menu-button_open')[0];
+const menuButtonClose = document.getElementsByClassName('header__menu-button_close')[0];
 const headerDropdownBg = document.getElementsByClassName('header__dropdown-bg')[0];
 
 headerDropdownBg.addEventListener('click', (event) => {
-  header.classList.toggle('header_dropdown-active');
-})
-
-menuButton.addEventListener('click', (event) => {
   body.classList.toggle('body_dropdown-active');
 })
 
+menuButtonOpen.addEventListener('click', (event) => {
+  body.classList.add('body_dropdown-active');
+})
+
+menuButtonClose.addEventListener('click', (event) => {
+  body.classList.remove('body_dropdown-active');
+})
+
+
+const popupCloseBtnArray = document.getElementsByClassName('popup__close-btn');
+const popupBg = document.getElementsByClassName('popup__bg')[0];
+
+popupBg.addEventListener('click', () => {
+  body.classList.remove('body_popup-active');
+})
+
+popupCloseBtnArray.forEach((btn) => {
+  btn.addEventListener('click', (event) => {
+    body.classList.remove('body_popup-active');
+  })
+})
+
+const authButton = document.getElementsByClassName('header__button_noauth')[0];
+
+authButton.addEventListener('click', () => {
+  body.classList.add('body_popup-active');  
+})
