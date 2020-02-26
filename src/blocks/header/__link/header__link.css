@@ -17,6 +17,10 @@
   color: #1A1B22;
 }
 
+.header_dropdown-active .header__link {
+  color: #fff;
+}
+
 @media only screen and (max-width: 768px) {
   .header__link {
     margin-left: 16px;

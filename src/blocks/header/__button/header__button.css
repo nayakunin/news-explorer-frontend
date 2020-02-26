@@ -10,6 +10,11 @@
   color: #1a1b22;
 }
 
+.header_dropdown-active .header__button.button {
+  border-color: #fff;
+  color: #fff;
+}
+
 @media only screen and (max-width: 600px) {
   .header__button.button {
     margin-top: 22px;

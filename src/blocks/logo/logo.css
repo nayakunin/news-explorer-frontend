@@ -13,6 +13,10 @@
   align-items: center;
 }
 
+.header_dropdown-active .logo{
+  color: #fff;
+}
+
 @media only screen and (max-width: 600px) {
   .logo {
     font-size: 16px;

@@ -10,6 +10,7 @@
 @import url('./_white/header_white.css');
 @import url('./__dropdown-bg/header__dropdown-bg.css');
 @import url('./__username-btn/header__username-btn.css');
+@import url('./_dropdown-active/header_dropdown-active.css');
 
 .header {
   width: calc(100% - 208px);
@@ -38,8 +39,11 @@
 }
 
 .header_white.header {
-  position: relative;
   background: #fff;
+}
+
+.header.header_dropdown-active {
+  position: fixed;
 }
 
 .header_white.header::after {

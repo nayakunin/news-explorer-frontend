@@ -3,6 +3,7 @@ import '../../images/image-03.jpg';
 import '../../images/not-found_v1.png';
 
 const body = document.getElementsByClassName('body')[0];
+const header = document.getElementsByClassName('header')[0];
 const cards = document.getElementsByClassName('card');
 cards.forEach((card) => {
   const button = card.getElementsByClassName('card__button')[0];
@@ -19,23 +20,21 @@ cards.forEach((card) => {
       outline.classList.toggle('card__button-outline_active');
     }
   });
-  const description = card.getElementsByClassName('card__description')[0];
-  description.innerText = truncate(description, maxSymbols);
 })
 const menuButtonOpen = document.getElementsByClassName('header__menu-button_open')[0];
 const menuButtonClose = document.getElementsByClassName('header__menu-button_close')[0];
 const headerDropdownBg = document.getElementsByClassName('header__dropdown-bg')[0];
 
 headerDropdownBg.addEventListener('click', (event) => {
-  body.classList.toggle('body_dropdown-active');
+  header.classList.remove('header_dropdown-active');
 })
 
 menuButtonOpen.addEventListener('click', (event) => {
-  body.classList.add('body_dropdown-active');
+  header.classList.add('header_dropdown-active');
 })
 
 menuButtonClose.addEventListener('click', (event) => {
-  body.classList.remove('body_dropdown-active');
+  header.classList.remove('header_dropdown-active');
 })
 
 

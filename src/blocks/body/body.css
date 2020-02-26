@@ -1,4 +1,3 @@
-@import url('./_dropdown-active/body_dropdown-active.css');
 @import url('./_auth/body_auth.css');
 @import url('./_noauth/body_noauth.css');
 @import url('./_popup-active/body__popup-active.css');
@@ -6,4 +5,17 @@
 .body {
   position: relative;
   font-family: 'Roboto';
+  padding-top: 80px;
+}
+
+@media only screen and (max-width: 768px) {
+  .body {
+    padding-top: 66px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .body {
+    padding-top: 56px;
+  }
 }

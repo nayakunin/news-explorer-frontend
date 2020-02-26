@@ -1,8 +1,8 @@
-.body_dropdown-active .header__menu-button_open {
+.header_dropdown-active .header__menu-button_open {
   display: none;
 }
 
-.body_popup-active .header__menu-button_open {
+.header_popup-active .header__menu-button_open {
   display: none;
 }
 
