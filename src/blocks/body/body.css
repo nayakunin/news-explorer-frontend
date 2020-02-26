@@ -5,17 +5,4 @@
 .body {
   position: relative;
   font-family: 'Roboto';
-  padding-top: 80px;
-}
-
-@media only screen and (max-width: 768px) {
-  .body {
-    padding-top: 66px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .body {
-    padding-top: 56px;
-  }
 }

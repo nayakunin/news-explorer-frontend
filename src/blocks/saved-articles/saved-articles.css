@@ -8,3 +8,19 @@
 @import url('./__title/saved-articles__title.css');
 @import url('./__themes-counter/saved-articles__themes-counter.css');
 @import url('./__themes-first/saved-articles__themes-first.css');
+
+.saved-articles {
+  padding-top: 80px;
+}
+
+@media only screen and (max-width: 768px) {
+  .saved-articles {
+    padding-top: 66px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .saved-articles {
+    padding-top: 56px;
+  }
+}

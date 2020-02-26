@@ -1,4 +1,5 @@
 @import url('./_hidden/card__button-popup_hidden.css');
+@import url('./_clickable/card__button-popup_clickable.css');
 
 .card__button-popup {
   height: 40px;

@@ -34,8 +34,6 @@
   height: 100vh;
 }
 
-@media only screen and (max-width: 600px) {
-  .popup {
-    z-index: unset;
-  }
+.body_popup-active .popup {
+  position: fixed;
 }
