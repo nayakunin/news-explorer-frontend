@@ -5,6 +5,11 @@
   height: 48px;
 }
 
+.header_white .header__button.button {
+  border-color: #1a1b22;
+  color: #1a1b22;
+}
+
 @media only screen and (max-width: 600px) {
   .header__button.button {
     margin-top: 22px;

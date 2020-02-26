@@ -11,6 +11,8 @@
 @import url("./__text-container/card__text-container.css");
 @import url('./__button-inside/card__button-inside.css');
 @import url('./__button-outline/card__button-outline.css');
+@import url('./__theme-container/card__theme-container.css');
+@import url('./__theme/card__theme.css');
 
 .card {
   background: #FFFFFF;

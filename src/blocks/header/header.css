@@ -7,7 +7,9 @@
 @import url("./__logo-container/header__logo-container.css");
 @import url('./__menu-button-container/header__menu-button-container.css');
 @import url('./__menu-button/header__menu-button.css');
+@import url('./_white/header_white.css');
 @import url('./__dropdown-bg/header__dropdown-bg.css');
+@import url('./__username-btn/header__username-btn.css');
 
 .header {
   width: calc(100% - 208px);
@@ -33,6 +35,15 @@
   bottom: 0;
   left: 0;
   z-index: 4;
+}
+
+.header_white.header {
+  position: relative;
+  background: #fff;
+}
+
+.header_white.header::after {
+  background: #D1D2D6;
 }
 
 @media only screen and (max-width: 1023px) {

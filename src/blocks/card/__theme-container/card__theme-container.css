@@ -1,0 +1,33 @@
+.card__theme-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 12px;
+  height: 40px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  top: 24px;
+  left: 24px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .card__theme-container {
+    top: 16px;
+    left: 16px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .card__theme-container {
+    top: 8px;
+    left: 8px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .card__theme-container {
+    top: 16px;
+    left: 16px;
+  }
+}
