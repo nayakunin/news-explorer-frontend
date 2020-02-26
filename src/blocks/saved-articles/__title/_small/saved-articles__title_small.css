@@ -4,3 +4,10 @@
   line-height: 24px;
   color: rgba(26, 27, 34, 0.5);
 }
+
+@media only screen and (max-width: 1024px) {
+  .saved-articles__title_small {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

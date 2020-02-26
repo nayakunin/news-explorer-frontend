@@ -1,3 +1,27 @@
 .saved-articles__stats-container {
   padding: 40px 104px 56px;
 }
+
+@media only screen and (max-width: 1024px) {
+   .saved-articles__stats-container {
+     padding: 32px 72px 44px;
+   }
+}
+
+@media only screen and (max-width: 768px) {
+  .saved-articles__stats-container {
+    padding: 24px 40px 32px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .saved-articles__stats-container {
+    padding: 16px 28px 32px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .saved-articles__stats-container {
+    padding: 8px 16px 32px;
+  }
+}

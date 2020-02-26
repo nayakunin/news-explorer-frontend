@@ -2,3 +2,27 @@
   padding: 62px 102px;
   background: #F5F6F7;
 }
+
+@media only screen and (max-width: 1024px) {
+  .saved-articles__results {
+    padding: 42px 71px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .saved-articles__results {
+    padding: 32px 40px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .saved-articles__results {
+    padding: 28px 28px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .saved-articles__results {
+    padding: 24px 16px;
+  }
+}
