@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.results.css %>">
   <title>News Explorer</title>
 </head>
 
-<body class="body body_noauth body_popup-active">
+<body class="body body_noauth">
   <header class="header">
     <div class="header__dropdown-bg"></div>
     <div class="header__logo-container">
@@ -74,24 +74,24 @@
       </div>
     </div>
   </section>
-  <section class="results">
+  <section class="results results_nothing-found">
     <div class="results__container">
       <div
-        class="results__preloader-container results__preloader-container_loading results__preloader-container_hidden">
+        class="results__preloader-container results__preloader-container_loading">
         <div class="results__status-image">
           <i class="preloader results__preloader"></i>
         </div>
         <p class="results__preloader-text">Идёт поиск новостей</p>
       </div>
       <div
-        class="results__preloader-container results__preloader-container_not-found results__preloader-container_hidden">
+        class="results__preloader-container results__preloader-container_nothing-found">
         <div class="results__status-image">
           <img src="./images/not-found_v1.png" alt="не найдено">
         </div>
         <h3 class="results__subtitle">Ничего не найдено</h3>
-        <p class="results__preloader-text">К сожалению по вашему запросу неичего не найдено</p>
+        <p class="results__preloader-text">К сожалению по вашему запросу ничего не&nbsp;найдено</p>
       </div>
-      <div class="results__content-found">
+      <div class="results__content_found">
         <h2 class="results__title">Результаты поиска</h2>
         <div class="results__cards-container">
           <div class="result__card card">
@@ -350,7 +350,7 @@
       </div>
     </div>
   </div>
-  <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+  <script src="<%= htmlWebpackPlugin.files.chunks.results.entry %>"></script>
 </body>
 
 </html>

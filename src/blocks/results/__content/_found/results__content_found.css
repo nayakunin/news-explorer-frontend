@@ -1,0 +1,7 @@
+.results_found .results__content_found {
+  display: block;
+}
+
+.results__content_found {
+  display: none;
+}

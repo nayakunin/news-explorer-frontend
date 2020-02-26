@@ -1,4 +1,5 @@
-@import url('./_hidden/results__preloader-container_hidden.css');
+@import url('./_nothing-found/results__preloader-container_nothing-found.css');
+@import url('./_loading/results__preloader-container_loading.css');
 
 .results__preloader-container {
   display: flex;

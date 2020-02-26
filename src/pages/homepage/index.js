@@ -1,6 +1,6 @@
 import './index.css';
-import './images/image-03.jpg';
-import './images/not-found_v1.png';
+import '../../images/image-03.jpg';
+import '../../images/not-found_v1.png';
 
 const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 let maxSymbols;
@@ -77,5 +77,5 @@ popupCloseBtnArray.forEach((btn) => {
 const authButton = document.getElementsByClassName('header__button_noauth')[0];
 
 authButton.addEventListener('click', () => {
-  body.classList.add('body_popup-active');  
+  body.classList.add('body_popup-active');
 })
