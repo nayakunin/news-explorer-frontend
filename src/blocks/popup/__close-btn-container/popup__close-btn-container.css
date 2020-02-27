@@ -2,10 +2,19 @@
   position: absolute;
   top: -40px;
   right: -40px;
+  width: 40px;
+  height: 40px;
+  background: url('../../../images/close-mid.svg');
+  background-position: center;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {
   .popup__close-btn-container {
-    display: none;
+    background-size: 24px;
+    top: -42px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
   }
 }

@@ -38,17 +38,15 @@ menuButtonClose.addEventListener('click', (event) => {
 })
 
 
-const popupCloseBtnArray = document.getElementsByClassName('popup__close-btn');
+const popupCloseBtn = document.getElementsByClassName('popup__close-btn')[0];
 const popupBg = document.getElementsByClassName('popup__bg')[0];
 
 popupBg.addEventListener('click', () => {
   body.classList.remove('body_popup-active');
 })
 
-popupCloseBtnArray.forEach((btn) => {
-  btn.addEventListener('click', (event) => {
-    body.classList.remove('body_popup-active');
-  })
+popupCloseBtn.addEventListener('click', (event) => {
+  body.classList.remove('body_popup-active');
 })
 
 const authButton = document.getElementsByClassName('header__button_noauth')[0];
