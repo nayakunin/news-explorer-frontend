@@ -1,0 +1,9 @@
+.results__card-button-popup {
+  width: auto;
+}
+
+@media only screen and (max-width: 900px) {
+  .results__card-button-popup {
+    width: 100px;
+  }
+}

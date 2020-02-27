@@ -8,6 +8,8 @@
 @import url('./__title/saved-articles__title.css');
 @import url('./__themes-counter/saved-articles__themes-counter.css');
 @import url('./__themes-first/saved-articles__themes-first.css');
+@import url('./__card-button-container/saved-articles__card-button-container.css');
+@import url('./__card-button/saved-articles__card-button.css');
 
 .saved-articles {
   padding-top: 80px;

@@ -11,6 +11,9 @@
 @import url('./_loading/results_loading.css');
 @import url('./_nothing-found/results_nothing-found.css');
 @import url('./__content/results__content.css');
+@import url('./__card-button-container/results__card-button-container.css');
+@import url('./__card-button/results__card-button.css');
+@import url('./__card-button-popup/results__card-button-popup.css');
 
 .results {
   padding: 80px 104px;

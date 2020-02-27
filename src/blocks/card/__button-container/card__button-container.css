@@ -1,7 +1,4 @@
 .card__button-container {
-  display: grid;
-  grid-template-columns: auto 40px;
-  gap: 5px;
   position: absolute;
   top: 24px;
   right: 24px;
@@ -14,14 +11,6 @@
   }
 }
 
-@media only screen and (max-width: 1024px) {
-  .card__button-container {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: flex-end;
-  }
-}
-
 @media only screen and (max-width: 768px) {
   .card__button-container {
     top: 8px;
@@ -29,22 +18,9 @@
   }
 }
 
-@media only screen and (max-width: 700px) {
-  .card__button-container {
-    display: grid;
-    grid-template-columns: 130px 40px;
-  }
-}
-
 @media only screen and (max-width: 600px) {
   .card__button-container {
     top: 16px;
     right: 16px;
-  }
-}
-
-@media only screen and (max-width: 425px) {
-  .card__button-container {
-    grid-template-columns: 100px 40px;
   }
 }

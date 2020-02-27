@@ -1,0 +1,26 @@
+.saved-articles__card-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 1200px) {
+  .saved-articles__card-button-container {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .saved-articles__card-button-container {
+    flex-direction: row;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .saved-articles__card-button-container {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+}
