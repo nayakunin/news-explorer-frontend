@@ -5,6 +5,7 @@
   position: absolute;
   top: 24px;
   right: 24px;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -40,5 +41,11 @@
   .card__button-container {
     top: 16px;
     right: 16px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .card__button-container {
+    grid-template-columns: 100px 40px;
   }
 }
