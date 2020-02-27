@@ -18,6 +18,6 @@
 
 @media only screen and (max-width: 600px) {
   .search__input {
-    width: calc(100% - 48px);
+    width: calc(100% - 24px);
   }
 }
