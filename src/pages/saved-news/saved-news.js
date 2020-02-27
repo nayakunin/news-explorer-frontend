@@ -4,11 +4,16 @@ const header = document.getElementsByClassName('header')[0];
 const cards = document.getElementsByClassName('card');
 cards.forEach((card) => {
   const button = card.getElementsByClassName('card__button')[0];
+  const buttonIcon = card.getElementsByClassName('card__delete-icon')[0];
   const message = card.getElementsByClassName('card__button-popup')[0];
 
   button.addEventListener('click', (event) => {
     message.classList.remove('card__button-popup_hidden');
-    setTimeout(() => {message.classList.add('card__button-popup_hidden')}, 5000);
+    buttonIcon.classList.add('card__delete-icon_black');
+    setTimeout(() => {
+      message.classList.add('card__button-popup_hidden');
+      buttonIcon.classList.remove('card__delete-icon_black');
+    }, 5000);
   });
 })
 

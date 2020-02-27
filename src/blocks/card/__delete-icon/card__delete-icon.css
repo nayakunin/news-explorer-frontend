@@ -1,0 +1,5 @@
+@import url('./_black/card__delete-icon_black.css');
+
+.card__delete-icon {
+  transition: .3s all;
+}

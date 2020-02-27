@@ -13,6 +13,7 @@
 @import url('./__button-outline/card__button-outline.css');
 @import url('./__theme-container/card__theme-container.css');
 @import url('./__theme/card__theme.css');
+@import url('./__delete-icon/card__delete-icon.css');
 
 .card {
   background: #FFFFFF;
