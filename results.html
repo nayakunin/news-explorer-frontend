@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.d15b99fb6e50c5059320.css">
+  <link rel="icon" href="../../images/favicon.png">
+  <link rel="stylesheet" href="style.13dc93b33097c2828826.css">
   <title>News Explorer</title>
 </head>
 
 <body class="body body_noauth">
-  <header class="header">
+  <header class="header header_dropdown-active">
     <div class="header__dropdown-bg"></div>
     <div class="header__logo-container">
       <a href="#" class="logo">NewsExplorer</a>
@@ -50,16 +51,6 @@
             fill="white" />
         </svg>
       </div>
-      <div class="header__menu-button header__menu-button_popup-close popup__close-btn">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M13.4142 12L18.7071 17.2928L17.2929 18.7071L11.2929 12.7071C10.9024 12.3165 10.9024 11.6834 11.2929 11.2928L17.2929 5.29285L18.7071 6.70706L13.4142 12Z"
-            fill="white" />
-          <path
-            d="M10.8787 12L5.58577 17.2928L6.99999 18.7071L13 12.7071C13.3905 12.3165 13.3905 11.6834 13 11.2928L6.99999 5.29285L5.58577 6.70706L10.8787 12Z"
-            fill="white" />
-        </svg>
-      </div>
     </div>
   </header>
   <section class="search">
@@ -74,26 +65,27 @@
       </div>
     </div>
   </section>
-  <section class="results">
+  <!-- Для того чтобы изменять состояние блока результатов поиска есть 3 состояния: loading, nothing-found, found -->
+  <section class="results results_found">
     <div class="results__container">
       <div
-        class="results__preloader-container results__preloader-container_loading results__preloader-container_hidden">
+        class="results__preloader-container results__preloader-container_loading">
         <div class="results__status-image">
           <i class="preloader results__preloader"></i>
         </div>
         <p class="results__preloader-text">Идёт поиск новостей</p>
       </div>
       <div
-        class="results__preloader-container results__preloader-container_not-found results__preloader-container_hidden">
+        class="results__preloader-container results__preloader-container_nothing-found">
         <div class="results__status-image">
           <img src="./images/not-found_v1.png" alt="не найдено">
         </div>
         <h3 class="results__subtitle">Ничего не найдено</h3>
-        <p class="results__preloader-text">К сожалению по вашему запросу неичего не найдено</p>
+        <p class="results__preloader-text">К сожалению по вашему запросу ничего не&nbsp;найдено</p>
       </div>
-      <div class="results__content-found">
+      <div class="results__content_found">
         <h2 class="results__title">Результаты поиска</h2>
-        <div class="results__cards-container">
+        <div class="results__cards-container cards__container">
           <div class="result__card card">
             <div class="card__image">
               <div class="card__button-container">
@@ -279,16 +271,7 @@
   <div class="popup popup__state popup__state_login">
     <div class="popup__bg"></div>
     <div class="popup__container">
-      <div class="popup__close-btn-container popup__close-btn">
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M22.3566 20L31.1781 28.8215L28.8211 31.1786L18.3497 20.7072C17.9592 20.3166 17.9592 19.6835 18.3497 19.2929L28.8211 8.82153L31.1781 11.1786L22.3566 20Z"
-            fill="white" />
-          <path
-            d="M18.1307 20L9.30919 28.8215L11.6662 31.1786L22.1376 20.7072C22.5281 20.3166 22.5281 19.6835 22.1376 19.2929L11.6662 8.82153L9.30919 11.1786L18.1307 20Z"
-            fill="white" />
-        </svg>
-      </div>
+      <div class="popup__close-btn-container popup__close-btn"></div>
       <div class="popup__content popup__content_login">
         <h2 class="popup__title">Вход</h2>
         <form class="popup__form">
@@ -350,7 +333,7 @@
       </div>
     </div>
   </div>
-  <script src="results.b2803d11377f3ccfb9f7.js"></script>
+  <script src="results.a7ac4c8e29eb576ebfde.js"></script>
 </body>
 
 </html>
