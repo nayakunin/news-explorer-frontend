@@ -2,6 +2,8 @@
   display: grid;
   grid-template-columns: 464px 1fr;
   column-gap: 56px;
+  max-width: 1232px;
+  margin: auto;
 }
 
 @media only screen and (max-width: 1024px) {

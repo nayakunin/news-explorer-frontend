@@ -54,3 +54,33 @@ const authButton = document.getElementsByClassName('header__button_noauth')[0];
 authButton.addEventListener('click', () => {
   body.classList.add('body_popup-active');
 })
+
+const forms = document.getElementsByClassName('popup__form');
+forms.forEach((form) => {
+  const inputs = form.getElementsByClassName('popup__input');
+  const button = form.getElementsByClassName('popup__button')[0];
+  console.log(button);
+  inputs.forEach((input) => {
+    const errorMessage = input.parentNode.getElementsByClassName('popup__input-error')[0];
+    input.addEventListener('input', (event) => {
+      if (!event.target.checkValidity()) {
+        errorMessage.classList.add('popup__input-error_active');
+      } else {
+        errorMessage.classList.remove('popup__input-error_active');
+      }
+    })
+  })
+  form.addEventListener('input', (event) => {
+    let valid = true;
+    inputs.forEach((input) => {
+      if (!input.checkValidity()) {
+        valid = false;
+      }
+    })
+    if (valid) {
+      button.classList.remove('popup__button_disabled');
+    } else {
+      button.classList.add('popup__button_disabled');
+    }
+  })
+})

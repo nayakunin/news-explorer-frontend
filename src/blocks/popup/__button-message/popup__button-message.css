@@ -1,0 +1,15 @@
+@import url('./_active/popup__button-message-active.css');
+
+.popup__button-message {
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: -30px;
+  
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FF0000;
+}

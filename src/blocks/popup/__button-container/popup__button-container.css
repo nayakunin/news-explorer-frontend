@@ -1,4 +1,5 @@
 .popup__button-container {
+  position: relative;
   width: 100%;
   margin-top: 40px;
 }
