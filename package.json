@@ -1,7 +1,7 @@
 {
   "name": "news-explorer-frontend",
   "version": "1.0.0",
-  "description": "",
+  "description": "news-explorer",
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist && webpack --mode production",
