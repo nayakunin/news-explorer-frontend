@@ -5,11 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="./images/favicon.png">
-  <link rel="stylesheet" href="style.f0f41c0d1aa32317125f.css">
+  <link rel="stylesheet" href="style.a27ba6e89ba9a7c9a7c1.css">
   <title>News Explorer</title>
 </head>
 
-<body class="body body_auth">
+<!-- Чтобы открыть попап нужно добавить класс body_popup-active -->
+<body class="body body_noauth">
   <header class="header">
     <div class="header__dropdown-bg"></div>
     <div class="header__logo-container">
@@ -110,6 +111,7 @@
       </div>
     </div>
   </footer>
+  <!-- popup__state_login / popup__state_register / popup__state_info -->
   <div class="popup popup__state popup__state_login">
     <div class="popup__bg"></div>
     <div class="popup__container">
@@ -120,20 +122,20 @@
           <div class="popup__inputs-wrapper">
             <div class="popup__input-container">
               <label class="popup__input-label" for="login-email">Email</label>
-              <input type="email" name="email" class="popup__input popup__input_email" id="login-email"
+              <input pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required type="email" name="email" class="popup__input popup__input_email" id="login-email"
                 placeholder="Введите почту">
               <p class="popup__input-error popup__input-error_email">Неправильный формат email
               </p>
             </div>
             <div class="popup__input-container">
               <label class="popup__input-label" for="login-password">Пароль</label>
-              <input type="password" name="password" class="popup__input popup__input_password" id="login-password"
+              <input required type="password" name="password" class="popup__input popup__input_password" id="login-password"
                 placeholder="Введите пароль">
-              <p class="popup__input-error popup__input-error_password">Ошибка</p>
+              <p class="popup__input-error popup__input-error_password">Обязательное поле</p>
             </div>
           </div>
           <div class="popup__button-container">
-            <button type="submit" class="button button_default button_submit popup__button">Войти</button>
+            <button type="submit" class="button button_default button_submit popup__button popup__button_disabled">Войти</button>
           </div>
         </form>
         <p class="popup__text">или <span class="popup__link">Зарегистрироваться</span></p>
@@ -144,25 +146,26 @@
           <div class="popup__inputs-wrapper">
             <div class="popup__input-container">
               <label class="popup__input-label" for="reg-email">Email</label>
-              <input type="email" name="email" class="popup__input popup__input_email" id="reg-email"
+              <input pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required type="email" name="email" class="popup__input popup__input_email" id="reg-email"
                 placeholder="Введите почту">
-              <p class="popup__input-error popup__input-error_email">Ошибка</p>
+              <p class="popup__input-error popup__input-error_email">Неправильный формат email</p>
             </div>
             <div class="popup__input-container">
               <label class="popup__input-label" for="reg-password">Пароль</label>
-              <input type="password" name="password" class="popup__input popup__input_password" id="reg-password"
+              <input required minlength="8" type="password" name="password" class="popup__input popup__input_password" id="reg-password"
                 placeholder="Введите пароль">
-              <p class="popup__input-error popup__input-error_active popup__input-error_password">Ошибка</p>
+              <p class="popup__input-error popup__input-error_password">Не меньше 8 символов</p>
             </div>
             <div class="popup__input-container">
               <label class="popup__input-label" for="reg-username">Имя</label>
-              <input type="text" name="username" class="popup__input popup__input_username" id="reg-username"
+              <input required minlegth="2" maxlength="30" type="text" name="username" class="popup__input popup__input_username" id="reg-username"
                 placeholder="Введите своё имя">
               <p class="popup__input-error popup__input-error_username">Ошибка</p>
             </div>
           </div>
           <div class="popup__button-container">
-            <button type="submit" class="button button_default button_submit popup__button">Зарегистрироваться</button>
+            <p class="popup__button-message">Пользователь с таким именем уже есть</p>
+            <button type="submit" class="button button_default button_submit popup__button popup__button_disabled">Зарегистрироваться</button>
           </div>
         </form>
         <p class="popup__text">или <span class="popup__link">Войти</span></p>
@@ -175,7 +178,7 @@
       </div>
     </div>
   </div>
-  <script src="homepage.409fe0d730ddc6b5b465.js"></script>
+  <script src="homepage.56852aa59a887c8cec2d.js"></script>
 </body>
 
 </html>
