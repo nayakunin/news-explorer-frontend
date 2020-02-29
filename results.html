@@ -7,7 +7,7 @@
   <meta name="author" content="Nikita Yakunin">
   <meta name="description" content="News-explorer app">
   <link rel="icon" href="../../images/favicon.png">
-  <link rel="stylesheet" href="style.e976b21d14efac21851d.css">
+  <link rel="stylesheet" href="bundles/style.d2eb8d4e273d9b57af85.css">
   <title>News Explorer</title>
 </head>
 
@@ -60,12 +60,12 @@
     <div class="search__container">
       <h1 class="search__title">Что в мире<br>творится?</h1>
       <p class="search__description">Находите самые свежие статьи на любую тему и схораняйте в своем личном кабинете</p>
-      <div class="search__input-container">
+      <form class="search__input-container">
         <div class="search__input-wrapper">
-          <input type="search" name="search" class="search__input" placeholder="Введите тему новости">
+          <input required type="search" name="search" class="search__input" placeholder="Введите тему новости">
         </div>
-        <button class="button button_default search__button">Искать</button>
-      </div>
+        <button type="submit" class="button button_default search__button">Искать</button>
+      </form>
     </div>
   </section>
   <!-- Для того чтобы изменять состояние блока результатов поиска есть 3 состояния: loading, nothing-found, found -->
@@ -80,9 +80,9 @@
       </div>
       <div
         class="results__preloader-container results__preloader-container_nothing-found">
-        <div class="results__status-image">
+        <picture class="results__status-image">
           <img src="./images/not-found_v1.png" alt="не найдено">
-        </div>
+        </picture>
         <h3 class="results__subtitle">Ничего не найдено</h3>
         <p class="results__preloader-text">К сожалению по вашему запросу ничего не&nbsp;найдено</p>
       </div>
@@ -228,9 +228,9 @@
   </section>
   <section class="about">
     <div class="about__container">
-      <div class="about__image-container">
+      <picture class="about__image-container">
         <img src="./images/image-03.jpg" alt="Аватар" class="about__image">
-      </div>
+      </picture>
       <div class="about__info-container">
         <div class="about__info">
           <h2 class="about__title">Об авторе</h2>
@@ -318,7 +318,7 @@
             </div>
             <div class="popup__input-container">
               <label class="popup__input-label" for="reg-username">Имя</label>
-              <input required minlegth="2" maxlength="30" type="text" name="username" class="popup__input popup__input_username" id="reg-username"
+              <input required maxlength="30" type="text" name="username" class="popup__input popup__input_username" id="reg-username"
                 placeholder="Введите своё имя">
               <p class="popup__input-error popup__input-error_username">Ошибка</p>
             </div>
