@@ -12,10 +12,6 @@
   color: #1A1B22;
 }
 
-.search__input:focus {
-  outline: none;
-}
-
 @media only screen and (max-width: 600px) {
   .search__input {
     width: calc(100% - 24px);
