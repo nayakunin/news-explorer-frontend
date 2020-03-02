@@ -60,7 +60,6 @@ const forms = document.getElementsByClassName('popup__form');
 forms.forEach((form) => {
   const inputs = form.getElementsByClassName('popup__input');
   const button = form.getElementsByClassName('popup__button')[0];
-  console.log(button);
   inputs.forEach((input) => {
     const errorMessage = input.parentNode.getElementsByClassName('popup__input-error')[0];
     input.addEventListener('input', (event) => {
