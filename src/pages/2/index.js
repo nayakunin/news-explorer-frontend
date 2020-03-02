@@ -1,26 +1,11 @@
-import './results.css';
+import './index.css';
 import '../../images/image-03.jpg';
 import '../../images/not-found_v1.png';
+import '../../images/favicon.png';
 
 const body = document.getElementsByClassName('body')[0];
+
 const header = document.getElementsByClassName('header')[0];
-const cards = document.getElementsByClassName('card');
-cards.forEach((card) => {
-  const button = card.getElementsByClassName('card__button')[0];
-  const noAuthMessage = card.getElementsByClassName('card__button-popup')[0];
-
-  button.addEventListener('click', (event) => {
-    if (body.classList.contains('body_noauth')) {
-      noAuthMessage.classList.remove('card__button-popup_hidden');
-    } else {
-      const inside = button.getElementsByClassName('card__button-inside')[0];
-      const outline = button.getElementsByClassName('card__button-outline')[0];
-
-      inside.classList.toggle('card__button-inside_active');
-      outline.classList.toggle('card__button-outline_active');
-    }
-  });
-})
 const menuButtonOpen = document.getElementsByClassName('header__menu-button_open')[0];
 const menuButtonClose = document.getElementsByClassName('header__menu-button_close')[0];
 const headerDropdownBg = document.getElementsByClassName('header__dropdown-bg')[0];
@@ -36,7 +21,6 @@ menuButtonOpen.addEventListener('click', (event) => {
 menuButtonClose.addEventListener('click', (event) => {
   header.classList.remove('header_dropdown-active');
 })
-
 
 const popupCloseBtn = document.getElementsByClassName('popup__close-btn')[0];
 const popupBg = document.getElementsByClassName('popup__bg')[0];
@@ -59,7 +43,6 @@ const forms = document.getElementsByClassName('popup__form');
 forms.forEach((form) => {
   const inputs = form.getElementsByClassName('popup__input');
   const button = form.getElementsByClassName('popup__button')[0];
-  console.log(button);
   inputs.forEach((input) => {
     const errorMessage = input.parentNode.getElementsByClassName('popup__input-error')[0];
     input.addEventListener('input', (event) => {
