@@ -15,12 +15,6 @@ import MainApiClass from '../../js/api/MainApi';
 import MainApiOptions from '../../js/constants/MainApi.json';
 
 const MainApi = new MainApiClass(MainApiOptions);
-console.log(MainApi.signup({
-  email: "e@menuButtonClose.requestFullscr",
-  password: "1234567890",
-  name: "dsadsadsa"
-}));
-
 
 const body = document.getElementsByClassName('body')[0];
 const header = document.getElementsByClassName('header')[0];

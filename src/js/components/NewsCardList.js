@@ -3,7 +3,7 @@ export default class NewsCardList {
 
   }
 
-  renderResult = () => {
+  renderResult = (cards) => {
 
   }
 
@@ -20,6 +20,6 @@ export default class NewsCardList {
   }
 
   addCard = () => {
-    
+
   }
 }

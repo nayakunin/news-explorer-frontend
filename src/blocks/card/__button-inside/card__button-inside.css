@@ -1,5 +1,13 @@
-@import url('./_active/card__button-inside_active.css');
+/* @import url('./_active/card__button-inside_active.css'); */
 
-.card__button-inside {
+/* .card__button-inside {
   fill: white;
+} */
+
+.card__button_default .card__button-inside, .card__button_black .card__button-inside {
+  fill: white;
+}
+
+.card__button_blue .card__button-inside {
+  fill: #2F71E5;
 }

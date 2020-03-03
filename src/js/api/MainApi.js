@@ -5,14 +5,17 @@ export default class MainApi {
   }
 
   signup(user) {
-    console.log(user);
     fetch(`${this.baseUrl}/signup`, {
       method: 'POST',
       body: JSON.stringify({
         email: user.email,
         password: user.password,
         username: user.name
-      })
+      }),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
     })
     .then((response) => {
       return response.json();
@@ -25,9 +28,18 @@ export default class MainApi {
     })
   }
 
-  // signin = () => {
-
-  // }
+  signin(user) {
+    fetch(`${this.baseUrl}/signin`, {
+      method: 'POST',
+      body: JSON.stringify({
+        email: user.email,
+        password: user.password
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+  }
 
   // getUserDate = () => {
 
