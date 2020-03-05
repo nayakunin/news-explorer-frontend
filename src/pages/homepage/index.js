@@ -13,8 +13,16 @@ import '../../images/favicon.png';
 
 import MainApiClass from '../../js/api/MainApi';
 import MainApiOptions from '../../js/constants/MainApi.json';
+import SearchClass from '../../js/components/Search';
 
 const MainApi = new MainApiClass(MainApiOptions);
+const Search = new SearchClass();
+
+// MainApi.signup({
+//   email: 'e1a2da1e@mdsa.ru',
+//   password: 'asfadhfkjsahdasd',
+//   name: 'fgdakjfhsa'
+// });
 
 const body = document.getElementsByClassName('body')[0];
 const header = document.getElementsByClassName('header')[0];

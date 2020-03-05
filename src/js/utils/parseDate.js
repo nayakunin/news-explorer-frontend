@@ -4,7 +4,8 @@ export default (_date) => {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-  }).split(' ').pop();
+  }).split(' ');
+  dateSplited.pop();
   dateSplited[1] += ',';
   return dateSplited.join(' ');
 }

@@ -5,13 +5,13 @@ class State {
     this.userName = null;
   }
 
-  signIn = () => {
+  signIn() {
     this.isLoggedIn = true;
     this.state.classList.add('body_auth');
     this.state.classList.remove('body_noauth');
   }
 
-  logOut = () => {
+  logOut(){
     this.isLoggedIn = false;
     this.state.classList.add('body_noauth');
     this.state.classList.remove('body_auth');

@@ -10,7 +10,7 @@ export default class MainApi {
       body: JSON.stringify({
         email: user.email,
         password: user.password,
-        username: user.name
+        name: user.name
       }),
       headers: {
         'Accept': 'application/json',
@@ -22,9 +22,10 @@ export default class MainApi {
     })
     .then((data) => {
       console.log(data);
+      return data;
     })
     .catch((err) => {
-      console.error(err);
+      console.log(err);
     })
   }
 
