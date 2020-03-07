@@ -26,11 +26,7 @@ export default class NewsCard {
         </div>
       </div>
       <p class="card__author">${options.author}</p>
-    </div>`
-  }
-
-  render() {
-
+    </div>`;
   }
 
   renderIcon() {

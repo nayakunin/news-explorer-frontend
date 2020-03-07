@@ -1,5 +1,5 @@
 class State {
-  constructor(options) {
+  constructor() {
     this.state = document.getElementsByClassName('body');
     this.isLoggedIn = false;
     this.userName = null;
@@ -11,12 +11,11 @@ class State {
     this.state.classList.remove('body_noauth');
   }
 
-  logOut(){
+  logOut() {
     this.isLoggedIn = false;
     this.state.classList.add('body_noauth');
     this.state.classList.remove('body_auth');
   }
-
 }
 
 export default new State();

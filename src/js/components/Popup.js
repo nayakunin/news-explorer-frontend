@@ -1,8 +1,8 @@
 class Popup {
   constructor() {
-    this.popup = document.getElementsByClassName('popup')[0];
-    this.closeBtn = this.popup.getElementsByClassName('popup__close-btn')[0];
-    this.popupBg = this.popup.getElementsByClassName('popup__bg')[0];
+    [this.popup] = document.getElementsByClassName('popup');
+    [this.closeBtn] = this.popup.getElementsByClassName('popup__close-btn');
+    [this.popupBg] = this.popup.getElementsByClassName('popup__bg');
 
 
     this.open = this.open.bind(this);
@@ -14,11 +14,11 @@ class Popup {
   }
 
   switchContent(type) {
-    const classList = this.popup.classList;
+    const { classList } = this.popup;
     classList.remove('popup_login');
     classList.remove('popup_register');
     classList.remove('popup_info');
-    switch(type) {
+    switch (type) {
       case 'login':
         classList.add('popup_login');
         break;
@@ -28,10 +28,12 @@ class Popup {
       case 'info':
         classList.add('popup_info');
         break;
+      default:
+        break;
     }
   }
 
-  open () {
+  open() {
     this.popup.classList.remove('popup_hidden');
   }
 

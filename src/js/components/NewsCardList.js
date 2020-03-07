@@ -1,12 +1,12 @@
 import NewsApi from '../api/NewsApi';
-import NewsCard from '../components/NewsCard';
+import NewsCard from './NewsCard';
 
 class NewsCardList {
   constructor() {
-    this.state = document.getElementsByClassName('results')[0];
-    this.container = document.getElementsByClassName('results__cards-container')[0];
+    [this.state] = document.getElementsByClassName('results');
+    [this.container] = document.getElementsByClassName('results__cards-container');
     this.cardsArray = [];
-    this.showMoreBtn = document.getElementsByClassName('results__button')[0];
+    [this.showMoreBtn] = document.getElementsByClassName('results__button');
     this.keyWord = '';
 
     this.initialRender = this.initialRender.bind(this);

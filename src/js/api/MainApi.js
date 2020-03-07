@@ -1,7 +1,9 @@
 export default class MainApi {
   constructor(options) {
     this.baseUrl = options.baseUrl;
-    // this.signup = this.signup.bind(this);
+
+
+    this.signup = this.signup.bind(this);
   }
 
   signup(user) {
@@ -10,23 +12,21 @@ export default class MainApi {
       body: JSON.stringify({
         email: user.email,
         password: user.password,
-        name: user.name
+        name: user.name,
       }),
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
     })
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      console.log(data);
-      return data;
-    })
-    .catch((err) => {
-      console.log(err);
-    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        return data;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   signin(user) {
@@ -34,12 +34,17 @@ export default class MainApi {
       method: 'POST',
       body: JSON.stringify({
         email: user.email,
-        password: user.password
+        password: user.password,
       }),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
     })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      });
   }
 
   // getUserDate = () => {

@@ -7,42 +7,43 @@ export default class Form {
   }
 
 
-  setServerError = (error) => {
+  setServerError(error) {
     this.errorMsg.classList.add('popup__button-message_active');
     this.errorMsg.innerHtml = error;
   }
 
-  _validateInputElement = (inputObj) => {
-    return inputObj.checkValidity();
+  _validateInputElement(i) {
+    return this.input[i].checkValidity();
   }
 
-  _validateForm = () => {
+  _validateForm() {
+    let state = true;
     this.inputs.forEach((input) => {
       if (!this._validateInputElement(input)) {
-        return false;
+        state = false;
       }
-    })
-    return true;
+    });
+    return state;
   }
 
-  _clear = () => {
+  _clear() {
     this.inputs.forEach((input) => {
       input.value = '';
-    })
+    });
     this.inputsError.forEach((inputError) => {
       this._hideErrorMsg(inputError);
-    })
+    });
   }
 
-  _showErrorMsg = (inputError) => {
-    inputError.classList.add('popup__input-error_active');
+  _showErrorMsg(i) {
+    this.inputsError[i].classList.add('popup__input-error_active');
   }
 
-  _hideErrorMsg = (inputError) => {
-    inputError.classList.remove('popup__input-error_active');
+  _hideErrorMsg(i) {
+    this.inputsError[i].classList.remove('popup__input-error_active');
   }
 
-  _getInfo = () => {
+  _getInfo() {
     const values = [];
     this.inputs.forEach((input) => {
       values.push(input.value);

@@ -2,14 +2,14 @@ import State from './State';
 import Popup from './Popup';
 
 export default class Header {
-  constructor(options) {
-    this.header = document.getElementsByClassName('header')[0];
-    this.userName = this.header.getElementsByClassName('header__username')[0];
-    this.signInBtn = this.header.getElementsByClassName('header__button-container_noauth')[0];
-    this.signOutBtn = this.header.getElementsByClassName('header__button-container_auth')[0];
+  constructor() {
+    [this.header] = document.getElementsByClassName('header');
+    [this.userName] = this.header.getElementsByClassName('header__username');
+    [this.signInBtn] = this.header.getElementsByClassName('header__button-container_noauth');
+    [this.signOutBtn] = this.header.getElementsByClassName('header__button-container_auth');
 
     this.signInBtn.addEventListener('click', () => {
-      Popup.switchContent('login')
+      Popup.switchContent('login');
       Popup.open();
     });
   }
