@@ -5,7 +5,7 @@ export default class MainNewsCard extends NewsCard {
   constructor(options, instanceCounter) {
     super(options);
     this.markup = resultsCardMarkup(options, instanceCounter);
-    this._iconState = 'deafult';
+    this._iconState = 'default';
 
     this.renderIcon = this.renderIcon.bind(this);
   }

@@ -8,7 +8,7 @@ export default class Form {
 
     this._valid = false;
 
-    this._clear = this._clear.bind(this);
+    this.clear = this.clear.bind(this);
     // this._getInfo = this._getInfo.bind(this);
     this._hideErrorMsg = this._hideErrorMsg.bind(this);
     this._showErrorMsg = this._showErrorMsg.bind(this);
@@ -43,7 +43,7 @@ export default class Form {
     return this.inputs[i].checkValidity();
   }
 
-  _clear() {
+  clear() {
     this.inputs.forEach((input) => {
       input.value = '';
     });

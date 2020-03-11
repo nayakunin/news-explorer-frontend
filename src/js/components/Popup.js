@@ -10,18 +10,6 @@ export default class Popup {
     this.switchContent = this.switchContent.bind(this);
     this.closeBtn.addEventListener('click', this.close);
     this.popupBg.addEventListener('click', this.close);
-
-    // this.linkToSignUp.addEventListener('click', () => {
-    //   this.switchContent('signup');
-    // });
-
-    // this.linkToLogin.addEventListener('click', () => {
-    //   this.switchContent('login');
-    // });
-
-    // this.linkToProceedLogin.addEventListener('click', () => {
-    //   this.switchContent('login');
-    // });
   }
 
   switchContent(type) {

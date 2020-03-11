@@ -42,40 +42,18 @@ header.signOutBtn.addEventListener('click', () => {
 });
 
 popup.linkToSignUp.addEventListener('click', () => {
+  formLogin.clear();
   popup.switchContent('signup');
 });
 
 popup.linkToLogin.addEventListener('click', () => {
+  formSignUp.clear();
   popup.switchContent('login');
 });
 
 popup.linkToProceedLogin.addEventListener('click', () => {
   popup.switchContent('login');
 });
-
-const cardButtonHandlerConstructor = (i) => {
-  const card = newsCardList.getFromArrayByIndex(i);
-  return async () => {
-    if (localStorage.getItem('token')) {
-      if (card.iconState === 'default') {
-        const result = await mainApi.createArticle(card.payload);
-        if (result.data) {
-          card.id = result.data._id;
-          card.renderIcon('blue');
-        }
-      } else if (card.iconState === 'blue') {
-        if (card.id) {
-          const result = await mainApi.removeArticle(card.id);
-          if (result.data) {
-            card.renderIcon('default');
-          }
-        }
-      }
-    } else {
-      card.renderIcon('black');
-    }
-  };
-};
 
 search.btn.addEventListener('click', async (event) => {
   event.preventDefault();
@@ -95,7 +73,32 @@ search.btn.addEventListener('click', async (event) => {
       const cardObj = newsCardList.getFromArrayByIndex(i);
       cardObj.assignButton(button);
       cardObj.assignButtonPopup(card.getElementsByClassName('card__button-popup')[0]);
-      button.addEventListener('click', cardButtonHandlerConstructor(i));
+      card.addEventListener('click', async function(event) {
+        if (event.target === button || event.target.parentNode === button || event.target.parentNode.parentNode === button) {
+          const card = newsCardList.getFromArrayByIndex(i);
+          console.log(card);
+          console.log(this);
+          console.log(card === this);
+          if (localStorage.getItem('token')) {
+            if (card.iconState === 'default') {
+              const result = await mainApi.createArticle(card.payload);
+              if (result.data) {
+                card.id = result.data._id;
+                card.renderIcon('blue');
+              }
+            } else if (card.iconState === 'blue') {
+              if (card.id) {
+                const result = await mainApi.removeArticle(card.id);
+                if (result.data) {
+                  card.renderIcon('default');
+                }
+              }
+            }
+          } else {
+            card.renderIcon('black');
+          }
+        }
+      });
     }
   }
 });
@@ -149,22 +152,46 @@ formLogin.submitBtn.addEventListener('click', (event) => {
       //   password: 'asfadhfkjsahdasd',
       // })
       .then((data) => {
-        localStorage.setItem('user', data.user);
+        localStorage.setItem('userName', data.user.name);
         localStorage.setItem('token', data.token);
+        header.render();
+        popup.close();
+        formLogin.clear();
       })
       .catch((error) => {
         formLogin.setServerError(error.message);
       });
   }
 });
+
+formSignUp.submitBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  if (formSignUp.valid) {
+    const [email, password, name] = formSignUp.getInfo;
+    mainApi.signup({ email, password, name })
+      .then((data) => {
+        console.log(data);
+        if (data) {
+          formSignUp.clear();
+          popup.switchContent('info');
+        }
+      })
+      .catch((error) => {
+        formSignUP.setServerError(error.message);
+      })
+      .catch((err) => err);
+  }
+});
 mainApi.signin({
-  email: 'e1a2da1e@mdsa.ru',
-  password: 'asfadhfkjsahdasd',
+  email: 'nayakunin@outlook.com',
+  password: '123456789',
 })
-  .then((data) => {
-    if (data) {
-      localStorage.setItem('userName', data.user.name);
-      localStorage.setItem('token', data.token);
+  .then((res) => {
+    if (res.message) {
+      console.log('then error message');
+    } else {
+      localStorage.setItem('userName', res.user.name);
+      localStorage.setItem('token', res.token);
     }
   });
 
@@ -181,10 +208,9 @@ mainApi.signin({
 // });
 
 
-// MainApi.signup({
+// MainApi.signin({
 //   email: 'e1a2da1e@mdsa.ru',
 //   password: 'asfadhfkjsahdasd',
-//   name: 'fgdakjfhsa'
 // });
 
 // const body = document.getElementsByClassName('body')[0];

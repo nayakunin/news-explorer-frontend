@@ -41,9 +41,26 @@ export default class MainApi {
         'Content-Type': 'application/json',
       },
     })
-      .then((response) => response.json())
-      .then((data) => data)
-      .catch((err) => err);
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        console.log('first then block');
+        throw Error(response.json());
+      })
+      .catch((err) => {
+        console.log('catch block');
+        // console.log(err);
+        return err;
+      });
+    // .then((data) => {
+    //   console.log(data);
+    //   return data;
+    // })
+    // .catch((err) => {
+    //   console.log(err);
+    //   return err;
+    // });
   }
 
   getUserData() {

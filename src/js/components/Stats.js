@@ -8,7 +8,8 @@ export default class Stats {
     [this.userName] = this.stats.getElementsByClassName('username');
     [this.articleCounterContiner] = this.stats.getElementsByClassName('saved-articles__article-counter');
     [this.frequentKeyWordsContainer] = this.stats.getElementsByClassName('saved-articles__themes-first');
-    [this.keyWordCounterContainer] = this.stats.getElementsByClassName('saved_articles__themes-counter');
+    [this.keyWordCounter] = this.stats.getElementsByClassName('saved-articles__themes-counter');
+    [this.keyWordCounterContainer] = this.stats.getElementsByClassName('saved-articles__more-themes');
   }
 
   setUserName(newName) {
@@ -19,12 +20,19 @@ export default class Stats {
     this.articleCounterContiner.innerHTML = parseArticleCounter(number);
   }
 
-  setFrequentKeyWords(...rest) {
-    const str = rest.reduce((acc, curr) => `${acc + capitalize(curr)}, `, '').slice(0, -2);
+  setFrequentKeyWords(word1, word2) {
+    console.log('setFrequentKeyWords');
+    console.log(word1, word2);
+    const str = `${capitalize(word1)}${word2 && `, ${capitalize(word2)}`}`;
     this.frequentKeyWordsContainer.innerHTML = str;
   }
 
   setKeyWordCounter(number) {
-    this.keyWordCounterContainer.innerHTML = parseKeyWordCouner(number);
+    if (number > 0) {
+      this.keyWordCounterContainer.classList.remove('saved-articles__more-themes_hidden');
+      this.keyWordCounter.innerHTML = parseKeyWordCouner(number);
+    } else {
+      this.keyWordCounterContainer.classList.add('saved-articles__more-themes_hidden');
+    }
   }
 }

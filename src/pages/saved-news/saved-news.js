@@ -62,11 +62,37 @@ const updateStats = async () => {
         stats.setFrequentKeyWords(max1KeyWord, max2KeyWord);
         stats.setKeyWordCounter(keyWords.size - 2);
       } else {
-        stats.setFrequentKeyWords([...keyWords.entries()].map(([k]) => k));
+        console.log('else');
+        stats.setFrequentKeyWords([...keyWords.keys()][0], [...keyWords.keys()][1]);
+        console.log('else1');
+        stats.setKeyWordCounter(0);
+        console.log('else2');
       }
     }).catch((err) => err);
 };
 
+function handleButtonClick(event) {
+  const [button] = this.getElementsByClassName('card__button');
+  if (event.target === button
+    || event.target.parentNode === button
+    || event.target.parentNode.parentNode === button) {
+    const [buttonPopup] = this.getElementsByClassName('card__button-popup');
+    buttonPopup.classList.remove('card__button-popup_hidden');
+  }
+}
+function handleDeletion(card, cardId) {
+  return async (event) => {
+    const [buttonPopup] = card.getElementsByClassName('card__button-popup');
+    if (event.target === buttonPopup
+      || event.target.parentNode === buttonPopup) {
+      const result = await mainApi.removeArticle(cardId);
+      if (result.data) {
+        newsCardList.removeById(card.id);
+        updateStats();
+      }
+    }
+  };
+}
 
 const loadArticles = async () => {
   await mainApi.getArticles()
@@ -86,20 +112,8 @@ const loadArticles = async () => {
         cardObj.assignButton(button);
         cardObj.assignButtonPopup(buttonPopup);
 
-        button.addEventListener('click', () => {
-          const newsCard = newsCardList.getFromArrayByIndex(i);
-          console.log(newsCard);
-          newsCard.buttonPopup.classList.remove('card__button-popup_hidden');
-        });
-        buttonPopup.addEventListener('click', async () => {
-          const newsCard = newsCardList.getFromArrayByIndex(i);
-          const result = await mainApi.removeArticle(newsCard.payload._id);
-          if (result.data) {
-            newsCardList.removeById(newsCard.id);
-            // newsCardList.renderResult();
-            updateStats();
-          }
-        });
+        card.addEventListener('click', handleButtonClick);
+        card.addEventListener('click', handleDeletion(card, cardObj.payload._id));
       }
     }).catch((err) => err);
 };

@@ -24,6 +24,6 @@ export default class SavedNewsCardList extends NewsCardList {
   }
 
   removeById(cardId) {
-    this.container.remove(this.container.getElementById(cardId));
+    document.getElementById(cardId).remove();
   }
 }
