@@ -1,13 +1,18 @@
 export default class MainApi {
-  constructor(options) {
-    this.baseUrl = options.baseUrl;
+  constructor(props) {
+    this.baseUrl = props.baseUrl;
 
 
     this.signup = this.signup.bind(this);
+    this.signin = this.signin.bind(this);
+    this.createArticle = this.createArticle.bind(this);
+    this.getArticles = this.getArticles.bind(this);
+    this.getUserData = this.getUserData.bind(this);
+    this.removeArticle = this.removeArticle.bind(this);
   }
 
   signup(user) {
-    fetch(`${this.baseUrl}/signup`, {
+    return fetch(`${this.baseUrl}/signup`, {
       method: 'POST',
       body: JSON.stringify({
         email: user.email,
@@ -20,17 +25,12 @@ export default class MainApi {
       },
     })
       .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        return data;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      .then((data) => data)
+      .catch((err) => err);
   }
 
   signin(user) {
-    fetch(`${this.baseUrl}/signin`, {
+    return fetch(`${this.baseUrl}/signin`, {
       method: 'POST',
       body: JSON.stringify({
         email: user.email,
@@ -42,24 +42,72 @@ export default class MainApi {
       },
     })
       .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      });
+      .then((data) => data)
+      .catch((err) => err);
   }
 
-  // getUserDate = () => {
+  getUserData() {
+    return fetch(`${this.baseUrl}/users/me`, {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => data)
+      .catch((err) => err);
+  }
 
-  // }
+  getArticles() {
+    return fetch(`${this.baseUrl}/articles`, {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => data)
+      .catch((err) => err);
+  }
 
-  // getArticles = () => {
+  createArticle(card) {
+    return fetch(`${this.baseUrl}/articles`, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+      body: JSON.stringify({
+        keyword: card.keyword,
+        title: card.title,
+        text: card.description,
+        date: card.date,
+        source: card.author,
+        link: card.url,
+        image: card.urlToImage,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => data)
+      .catch((err) => err);
+  }
 
-  // }
-
-  // createArticle = () => {
-
-  // }
-
-  // removeArticle = () => {
-
-  // }
+  removeArticle(id) {
+    return fetch(`${this.baseUrl}/articles/${id}`, {
+      method: 'DELETE',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => data)
+      .catch((err) => err);
+  }
 }

@@ -1,0 +1,5 @@
+.saved-articles__response-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

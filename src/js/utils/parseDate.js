@@ -8,4 +8,4 @@ export default (_date) => {
   dateSplited.pop();
   dateSplited[1] += ',';
   return dateSplited.join(' ');
-}
+};

@@ -1,0 +1,5 @@
+.saved-articles__results_empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

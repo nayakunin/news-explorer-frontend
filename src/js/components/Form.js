@@ -1,37 +1,56 @@
 export default class Form {
   constructor(formObj) {
     this.form = formObj;
-    this.inputs = this.form.getElementsByClass('popup__input');
-    this.inputsError = this.form.getElementsByClass('popup__input-error');
-    this.errorMsg = this.form.getElementsByClass('popup__button-message');
-  }
+    this.inputs = this.form.getElementsByClassName('popup__input');
+    this.inputsError = this.form.getElementsByClassName('popup__input-error');
+    [this.errorMsg] = this.form.getElementsByClassName('popup__button-message');
+    [this.submitBtn] = this.form.getElementsByClassName('popup__button');
 
+    this._valid = false;
 
-  setServerError(error) {
-    this.errorMsg.classList.add('popup__button-message_active');
-    this.errorMsg.innerHtml = error;
-  }
+    this._clear = this._clear.bind(this);
+    // this._getInfo = this._getInfo.bind(this);
+    this._hideErrorMsg = this._hideErrorMsg.bind(this);
+    this._showErrorMsg = this._showErrorMsg.bind(this);
+    this._validateForm = this._validateForm.bind(this);
+    this._validateInputElement = this._validateInputElement.bind(this);
+    this.setServerError = this.setServerError.bind(this);
+    this.typeHandler = this.typeHandler.bind(this);
+    // this.submitHandler = this.submitHandler.bind(this);
 
-  _validateInputElement(i) {
-    return this.input[i].checkValidity();
+    // this.submitBtn.addEventListener('click', this.submitHandler);
+    this.form.addEventListener('input', this.typeHandler);
+
+    for (let i = 0; i < this.inputs.length; i += 1) {
+      this.inputs[i].addEventListener('input', () => {
+        if (this._validateInputElement(i)) {
+          this._hideErrorMsg(i);
+        } else {
+          this._showErrorMsg(i);
+        }
+      });
+    }
   }
 
   _validateForm() {
-    let state = true;
-    this.inputs.forEach((input) => {
-      if (!this._validateInputElement(input)) {
-        state = false;
-      }
-    });
-    return state;
+    for (let i = 0; i < this.inputs.length; i += 1) {
+      if (!this._validateInputElement(i)) return false;
+    }
+    return true;
+  }
+
+  _validateInputElement(i) {
+    return this.inputs[i].checkValidity();
   }
 
   _clear() {
     this.inputs.forEach((input) => {
       input.value = '';
     });
-    this.inputsError.forEach((inputError) => {
-      this._hideErrorMsg(inputError);
+    let i = 0;
+    this.inputsError.forEach(() => {
+      this._hideErrorMsg(i);
+      i += 1;
     });
   }
 
@@ -43,11 +62,44 @@ export default class Form {
     this.inputsError[i].classList.remove('popup__input-error_active');
   }
 
-  _getInfo() {
+  get getInfo() {
     const values = [];
     this.inputs.forEach((input) => {
       values.push(input.value);
     });
     return values;
   }
+
+  setServerError(error) {
+    this.errorMsg.classList.add('popup__button-message_active');
+    this.errorMsg.innerHtml = error;
+  }
+
+  typeHandler() {
+    if (this._validateForm()) {
+      this._valid = true;
+      this.submitBtn.classList.remove('popup__button_disabled');
+    } else {
+      this._valid = false;
+      this.submitBtn.classList.add('popup__button_disabled');
+    }
+  }
+
+  get valid() {
+    return this._valid;
+  }
+
+  // submitHandler(event) {
+  //   event.preventDefault();
+  //   if (this._validateForm()) {
+  //     const [email, password, name] = this._getInfo();
+  //     this.callback({ email, password, name })
+  //       .then((data) => {
+  //         console.log(data);
+  //       })
+  //       .catch((error) => {
+  //         this.setServerError(error);
+  //       });
+  //   }
+  // }
 }

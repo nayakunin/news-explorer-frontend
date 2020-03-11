@@ -1,16 +1,27 @@
-class Popup {
+export default class Popup {
   constructor() {
     [this.popup] = document.getElementsByClassName('popup');
     [this.closeBtn] = this.popup.getElementsByClassName('popup__close-btn');
     [this.popupBg] = this.popup.getElementsByClassName('popup__bg');
-
+    [this.linkToSignUp, this.linkToLogin, this.linkToProceedLogin] = this.popup.getElementsByClassName('popup__link');
 
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
     this.switchContent = this.switchContent.bind(this);
-
     this.closeBtn.addEventListener('click', this.close);
     this.popupBg.addEventListener('click', this.close);
+
+    // this.linkToSignUp.addEventListener('click', () => {
+    //   this.switchContent('signup');
+    // });
+
+    // this.linkToLogin.addEventListener('click', () => {
+    //   this.switchContent('login');
+    // });
+
+    // this.linkToProceedLogin.addEventListener('click', () => {
+    //   this.switchContent('login');
+    // });
   }
 
   switchContent(type) {
@@ -22,7 +33,7 @@ class Popup {
       case 'login':
         classList.add('popup_login');
         break;
-      case 'register':
+      case 'signup':
         classList.add('popup_register');
         break;
       case 'info':
@@ -41,5 +52,3 @@ class Popup {
     this.popup.classList.add('popup_hidden');
   }
 }
-
-export default new Popup();

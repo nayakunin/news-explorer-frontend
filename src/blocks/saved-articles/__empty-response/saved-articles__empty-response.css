@@ -1,0 +1,7 @@
+.saved-articles__empty-response {
+  display: none;
+}
+
+.saved-articles__results_epmty .saved-articles__empty-response {
+  display: block;
+}

@@ -4,6 +4,6 @@
   cursor: not-allowed;
 }
 
-.popup__button.popup__button_disabled:hover {
+.popup__button.popup__button_disabled:hover, .popup__button.popup__button_disabled:focus    {
   background: #E6E8EB;
 }

@@ -3,23 +3,184 @@ import '../../images/image-03.jpg';
 import '../../images/not-found_v1.png';
 import '../../images/favicon.png';
 
-// import NewsApiClass from '../../js/api/NewsApi';
-// import NewsApiOptions from '../../js/constants/NewsApi.json';
-// const NewsApi = new NewsApiClass(NewsApiOptions);
-// NewsApi.getNews('Аниме');
-// NewsApi.getNews('Аниме');
-// NewsApi.getNews('Аниме');
-// NewsApi.getNews('Аниме');
-
-import MainApiClass from '../../js/api/MainApi';
-import MainApiOptions from '../../js/constants/MainApi.json';
-import SearchClass from '../../js/components/Search';
+import Search from '../../js/components/Search';
 import Popup from '../../js/components/Popup';
-import HeaderClass from '../../js/components/Header';
+import Header from '../../js/components/Header';
+import Form from '../../js/components/Form';
+// import NewsCardList from '../../js/components/NewsCardList';
+import NewsCardList from '../../js/components/MainPageNewsCardList';
+import NewsCard from '../../js/components/MainNewsCard';
+import NewsApi from '../../js/api/NewsApi';
+import NewsApiOptions from '../../js/constants/NewsApi.json';
+import MainApi from '../../js/api/MainApi';
+import MainApiOptinos from '../../js/constants/MainApi.json';
 
-const MainApi = new MainApiClass(MainApiOptions);
-const Search = new SearchClass();
-const Header = new HeaderClass({ isLoggedIn: true });
+const [formLoginDOM, formSignUpDOM] = document.getElementsByClassName('popup__form');
+
+const newsApi = new NewsApi(NewsApiOptions);
+const mainApi = new MainApi(MainApiOptinos);
+
+const formLogin = new Form(formLoginDOM);
+const formSignUp = new Form(formSignUpDOM);
+const search = new Search();
+const popup = new Popup();
+const header = new Header();
+const newsCardList = new NewsCardList();
+
+const { body } = document;
+
+header.signInBtn.addEventListener('click', () => {
+  popup.switchContent('login');
+  popup.open();
+});
+
+header.signOutBtn.addEventListener('click', () => {
+  body.classList.remove('body_auth');
+  body.classList.add('body_noauth');
+  localStorage.removeItem('userName');
+  localStorage.removeItem('token');
+});
+
+popup.linkToSignUp.addEventListener('click', () => {
+  popup.switchContent('signup');
+});
+
+popup.linkToLogin.addEventListener('click', () => {
+  popup.switchContent('login');
+});
+
+popup.linkToProceedLogin.addEventListener('click', () => {
+  popup.switchContent('login');
+});
+
+const cardButtonHandlerConstructor = (i) => {
+  const card = newsCardList.getFromArrayByIndex(i);
+  return async () => {
+    if (localStorage.getItem('token')) {
+      if (card.iconState === 'default') {
+        const result = await mainApi.createArticle(card.payload);
+        if (result.data) {
+          card.id = result.data._id;
+          card.renderIcon('blue');
+        }
+      } else if (card.iconState === 'blue') {
+        if (card.id) {
+          const result = await mainApi.removeArticle(card.id);
+          if (result.data) {
+            card.renderIcon('default');
+          }
+        }
+      }
+    } else {
+      card.renderIcon('black');
+    }
+  };
+};
+
+search.btn.addEventListener('click', async (event) => {
+  event.preventDefault();
+  if (search.inputValid()) {
+    // const cards = (await newsApi.getNews(search.input)).map((card) => new NewsCard(card));
+    const cards = await newsApi.getNews(search.input);
+    const newsCards = [];
+    for (let i = 0; i < cards.length; i += 1) {
+      newsCards.push(new NewsCard(cards[i], i));
+    }
+    newsCardList.initialRender();
+    newsCardList.addCards(newsCards);
+    newsCardList.renderResult();
+    for (let i = 0; i < cards.length; i += 1) {
+      const card = document.getElementById(`results-card_${i}`);
+      const [button] = card.getElementsByClassName('card__button');
+      const cardObj = newsCardList.getFromArrayByIndex(i);
+      cardObj.assignButton(button);
+      cardObj.assignButtonPopup(card.getElementsByClassName('card__button-popup')[0]);
+      button.addEventListener('click', cardButtonHandlerConstructor(i));
+    }
+  }
+});
+
+newsCardList.showMoreBtn.addEventListener('click', async () => {
+  const cards = await newsApi.showMore();
+  const alreadyRendered = newsCardList.length;
+  const newCards = [];
+  for (let i = alreadyRendered, j = 0; i < alreadyRendered + cards.length; i += 1, j += 1) {
+    newCards.push(new NewsCard(cards[j], i));
+  }
+  newsCardList.addCards(newCards);
+  newsCardList.renderResult();
+  for (let i = alreadyRendered; i < alreadyRendered + cards.length; i += 1) {
+    const card = document.getElementById(`results-card_${i}`);
+    const [button] = card.getElementsByClassName('card__button');
+    const cardObj = newsCardList.getFromArrayByIndex(i);
+    cardObj.assignButton(button);
+    cardObj.assignButtonPopup(card.getElementsByClassName('card__button-popup')[0]);
+    button.addEventListener('click', async () => {
+      const newCard = newsCardList.getFromArrayByIndex(i);
+      if (localStorage.getItem('token')) {
+        if (newCard.iconState === 'default') {
+          const result = await mainApi.createArticle(newCard.payload);
+          if (result.data) {
+            newCard.id = result.data._id;
+            newCard.renderIcon('blue');
+          }
+        } else if (newCard.iconState === 'blue') {
+          if (newCard.id) {
+            const result = await mainApi.removeArticle(newCard.id);
+            if (result.data) {
+              newCard.renderIcon('default');
+            }
+          }
+        }
+      } else {
+        newCard.renderIcon('black');
+      }
+    });
+  }
+});
+
+formLogin.submitBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  if (formLogin.valid) {
+    const [email, password] = formLogin.getInfo;
+    mainApi.signin({ email, password })
+      // mainApi.signin({
+      //   email: 'e1a2da1e@mdsa.ru',
+      //   password: 'asfadhfkjsahdasd',
+      // })
+      .then((data) => {
+        localStorage.setItem('user', data.user);
+        localStorage.setItem('token', data.token);
+      })
+      .catch((error) => {
+        formLogin.setServerError(error.message);
+      });
+  }
+});
+mainApi.signin({
+  email: 'e1a2da1e@mdsa.ru',
+  password: 'asfadhfkjsahdasd',
+})
+  .then((data) => {
+    if (data) {
+      localStorage.setItem('userName', data.user.name);
+      localStorage.setItem('token', data.token);
+    }
+  });
+
+// MainApi.getUserData();
+// MainApi.getArticles();
+// MainApi.createArticle({
+//   keyword: 'word',
+//   title: 'title',
+//   description: 'text',
+//   date: 'date',
+//   author: 'source',
+//   url: 'link.com',
+//   urlToImage: 'image.com',
+// });
+
+
 // MainApi.signup({
 //   email: 'e1a2da1e@mdsa.ru',
 //   password: 'asfadhfkjsahdasd',

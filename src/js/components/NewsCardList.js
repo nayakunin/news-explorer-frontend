@@ -1,77 +1,76 @@
-import NewsApi from '../api/NewsApi';
-import NewsCard from './NewsCard';
-
-class NewsCardList {
+export default class NewsCardList {
   constructor() {
-    [this.state] = document.getElementsByClassName('results');
-    [this.container] = document.getElementsByClassName('results__cards-container');
+    // [this.state] = document.getElementsByClassName('results');
+    // [this.container] = document.getElementsByClassName('results__cards-container');
     this.cardsArray = [];
-    [this.showMoreBtn] = document.getElementsByClassName('results__button');
+    // [this.showMoreBtn] = document.getElementsByClassName('results__button');
     this.keyWord = '';
 
-    this.initialRender = this.initialRender.bind(this);
+    // this.initialRender = this.initialRender.bind(this);
+    // this.clearResult = this.clearResult.bind(this);
+    // this.removeAllStates = this.removeAllStates.bind(this);
+    // this.renderResult = this.renderResult.bind(this);
+    // this.renderLoader = this.renderLoader.bind(this);
+    // this.renderError = this.renderError.bind(this);
+    this._addCard = this._addCard.bind(this);
+    this.addCards = this.addCards.bind(this);
+    this.getFromArrayByIndex = this.getFromArrayByIndex.bind(this);
+    this.removeFromArrayByIndex = this.removeFromArrayByIndex.bind(this);
     this.clearResult = this.clearResult.bind(this);
-    this.removeAllStates = this.removeAllStates.bind(this);
-    this.renderResult = this.renderResult.bind(this);
-    this.renderLoader = this.renderLoader.bind(this);
-    this.renderError = this.renderError.bind(this);
-    this.showMore = this.showMore.bind(this);
-    this.addCard = this.addCard.bind(this);
-
-    this.showMoreBtn.addEventListener('click', this.showMore);
   }
 
-  async initialRender(keyWord) {
-    this.clearResult();
-    this.keyWord = keyWord;
-    this.renderLoader();
-    const newCards = await NewsApi.getNews(this.keyWord);
-    if (!newCards.length) {
-      this.renderError();
-    } else {
-      newCards.forEach((card) => {
-        this.addCard(card);
-      });
-      this.renderResult();
-    }
-  }
+  // initialRender() {
+  //   this.state.classList.remove('results_hidden');
+  //   this.state.classList.remove('results_loading');
+  //   this.clearResult();
+  // }
 
   clearResult() {
     this.cardsArray = [];
   }
 
-  removeAllStates() {
-    this.state.classList.remove('results_hidden');
-    this.state.classList.remove('results_loading');
-    this.state.classList.remove('results_found');
-    this.state.classList.remove('results_nothing-found');
+  // removeAllStates() {
+  //   this.state.classList.remove('results_hidden');
+  //   this.state.classList.remove('results_loading');
+  //   this.state.classList.remove('results_found');
+  //   this.state.classList.remove('results_nothing-found');
+  // }
+
+  // renderResult() {
+  //   this.removeAllStates();
+  //   this.state.classList.add('results_found');
+  //   this.container.innerHTML = this.cardsArray.reduce((acc, card) => acc + card.markup, '\n');
+  // }
+
+  // renderLoader() {
+  //   this.removeAllStates();
+  //   this.state.classList.add('results_loading');
+  // }
+
+  // renderError() {
+  //   this.removeAllStates();
+  //   this.state.classList.add('results_nothing-found');
+  // }
+
+  addCards(cardArray) {
+    cardArray.forEach((card) => {
+      this._addCard(card);
+    });
   }
 
-  renderResult() {
-    this.removeAllStates();
-    this.state.classList.add('results_found');
-    this.container.innerHTML = this.cardsArray.reduce((acc, card) => acc + card.markup, '\n');
+  _addCard(card) {
+    this.cardsArray.push(card);
   }
 
-  renderLoader() {
-    this.removeAllStates();
-    this.state.classList.add('results_loading');
+  get length() {
+    return this.cardsArray.length;
   }
 
-  renderError() {
-    this.removeAllStates();
-    this.state.classList.add('results_nothing-found');
+  getFromArrayByIndex(i) {
+    return this.cardsArray[i];
   }
 
-  async showMore() {
-    const newCards = await NewsApi.getNews(this.keyWord);
-    newCards.forEach(this.addCard);
-    this.renderResult();
-  }
-
-  addCard(cardOptions) {
-    this.cardsArray.push(new NewsCard(cardOptions));
+  removeFromArrayByIndex(i) {
+    this.cardsArray.splice(i, 1);
   }
 }
-
-export default new NewsCardList();

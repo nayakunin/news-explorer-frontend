@@ -9,6 +9,8 @@
   },
   "globals": {
     "fetch": false,
-    "document": false
+    "document": false,
+    "localStorage": false,
+    "window": false
   }
 }
