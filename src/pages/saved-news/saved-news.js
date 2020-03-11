@@ -88,14 +88,15 @@ const loadArticles = async () => {
 
         button.addEventListener('click', () => {
           const newsCard = newsCardList.getFromArrayByIndex(i);
+          console.log(newsCard);
           newsCard.buttonPopup.classList.remove('card__button-popup_hidden');
         });
         buttonPopup.addEventListener('click', async () => {
           const newsCard = newsCardList.getFromArrayByIndex(i);
           const result = await mainApi.removeArticle(newsCard.payload._id);
           if (result.data) {
-            newsCardList.removeFromArrayByIndex(i);
-            newsCardList.renderResult();
+            newsCardList.removeById(newsCard.id);
+            // newsCardList.renderResult();
             updateStats();
           }
         });
