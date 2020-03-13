@@ -2,6 +2,6 @@
   display: none;
 }
 
-.saved-articles__results_epmty .saved-articles__empty-response {
+.saved-articles__results_empty .saved-articles__empty-response {
   display: block;
 }
