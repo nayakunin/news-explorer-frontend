@@ -27,8 +27,7 @@ const updateStats = async () => {
   await mainApi.getArticles()
     .then((res) => {
       const keyWords = new Map();
-      const cards = res.data;
-      if (!cards) {
+      if (!res.data.length) {
         newsCardList.showEmpty();
       }
       res.data.forEach((curr) => {
@@ -62,11 +61,8 @@ const updateStats = async () => {
         stats.setFrequentKeyWords(max1KeyWord, max2KeyWord);
         stats.setKeyWordCounter(keyWords.size - 2);
       } else {
-        console.log('else');
         stats.setFrequentKeyWords([...keyWords.keys()][0], [...keyWords.keys()][1]);
-        console.log('else1');
         stats.setKeyWordCounter(0);
-        console.log('else2');
       }
     }).catch((err) => err);
 };
@@ -85,35 +81,44 @@ function handleDeletion(card, cardId) {
     const [buttonPopup] = card.getElementsByClassName('card__button-popup');
     if (event.target === buttonPopup
       || event.target.parentNode === buttonPopup) {
-      const result = await mainApi.removeArticle(cardId);
-      if (result.data) {
-        newsCardList.removeById(card.id);
-        updateStats();
+      try {
+        const result = await mainApi.removeArticle(cardId);
+        if (result.data) {
+          newsCardList.removeFromArrayByIndex(card.id);
+          card.remove();
+          updateStats();
+        }
+      } catch (err) {
+        console.log(err);
       }
     }
   };
 }
 
-const loadArticles = async () => {
-  await mainApi.getArticles()
+const loadArticles = () => {
+  mainApi.getArticles()
     .then((res) => {
       const cards = res.data;
-      const newsCards = [];
-      for (let i = 0; i < cards.length; i += 1) {
-        newsCards.push(new NewsCard(cards[i], i));
-      }
-      newsCardList.addCards(newsCards);
-      newsCardList.renderResult();
-      for (let i = 0; i < cards.length; i += 1) {
-        const card = document.getElementById(`saved-articles-card_${i}`);
-        const [button] = card.getElementsByClassName('card__button');
-        const [buttonPopup] = card.getElementsByClassName('card__button-popup');
-        const cardObj = newsCardList.getFromArrayByIndex(i);
-        cardObj.assignButton(button);
-        cardObj.assignButtonPopup(buttonPopup);
+      if (!cards.length) {
+        newsCardList.showEmpty();
+      } else {
+        const newsCards = [];
+        for (let i = 0; i < cards.length; i += 1) {
+          newsCards.push(new NewsCard(cards[i], i));
+        }
+        newsCardList.addCards(newsCards);
+        newsCardList.renderResult();
+        for (let i = 0; i < cards.length; i += 1) {
+          const card = document.getElementById(`saved-articles-card_${i}`);
+          const [button] = card.getElementsByClassName('card__button');
+          const [buttonPopup] = card.getElementsByClassName('card__button-popup');
+          const cardObj = newsCardList.getFromArrayByIndex(i);
+          cardObj.assignButton(button);
+          cardObj.assignButtonPopup(buttonPopup);
 
-        card.addEventListener('click', handleButtonClick);
-        card.addEventListener('click', handleDeletion(card, cardObj.payload._id));
+          card.addEventListener('click', handleButtonClick);
+          card.addEventListener('click', handleDeletion(card, cardObj.payload._id));
+        }
       }
     }).catch((err) => err);
 };
@@ -123,6 +128,8 @@ header.signOutBtn.addEventListener('click', () => {
   body.classList.add('body_noauth');
   localStorage.removeItem('userName');
   localStorage.removeItem('token');
+  const url = window.location.href;
+  window.location.href = url.slice(0, url.indexOf('saved-news'));
 });
 
 updateStats();

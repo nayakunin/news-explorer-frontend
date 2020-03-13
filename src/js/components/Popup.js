@@ -8,8 +8,6 @@ export default class Popup {
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
     this.switchContent = this.switchContent.bind(this);
-    this.closeBtn.addEventListener('click', this.close);
-    this.popupBg.addEventListener('click', this.close);
   }
 
   switchContent(type) {

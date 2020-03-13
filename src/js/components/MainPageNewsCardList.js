@@ -1,3 +1,4 @@
+import constants from '../constants/constants.json';
 import NewsCardList from './NewsCardList';
 
 export default class MainPageNewsCardList extends NewsCardList {
@@ -30,7 +31,13 @@ export default class MainPageNewsCardList extends NewsCardList {
   renderResult() {
     this.removeAllStates();
     this.state.classList.add('results_found');
-    this.container.innerHTML = this.cardsArray.reduce((acc, card) => acc + card.markup, '\n');
+    for (
+      let i = this.cardsArray.length - constants.batchSize;
+      i < this.cardsArray.length;
+      i += 1) {
+      this.container.insertAdjacentHTML('beforeend', this.cardsArray[i].markup);
+    }
+    // this.container.innerHTML = this.cardsArray.reduce((acc, card) => acc + card.markup, '\n');
   }
 
   renderLoader() {

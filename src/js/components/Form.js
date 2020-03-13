@@ -52,6 +52,8 @@ export default class Form {
       this._hideErrorMsg(i);
       i += 1;
     });
+    this.errorMsg.classList.remove('popup__button-message_active');
+    this.errorMsg.innerHTML = '';
   }
 
   _showErrorMsg(i) {
@@ -72,7 +74,7 @@ export default class Form {
 
   setServerError(error) {
     this.errorMsg.classList.add('popup__button-message_active');
-    this.errorMsg.innerHtml = error;
+    this.errorMsg.innerHTML = error;
   }
 
   typeHandler() {

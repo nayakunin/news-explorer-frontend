@@ -10,6 +10,7 @@ export default class Stats {
     [this.frequentKeyWordsContainer] = this.stats.getElementsByClassName('saved-articles__themes-first');
     [this.keyWordCounter] = this.stats.getElementsByClassName('saved-articles__themes-counter');
     [this.keyWordCounterContainer] = this.stats.getElementsByClassName('saved-articles__more-themes');
+    [this.keyWordsPargaph] = this.stats.getElementsByClassName('saved-articles__subtitle');
   }
 
   setUserName(newName) {
@@ -21,10 +22,13 @@ export default class Stats {
   }
 
   setFrequentKeyWords(word1, word2) {
-    console.log('setFrequentKeyWords');
-    console.log(word1, word2);
-    const str = `${capitalize(word1)}${word2 && `, ${capitalize(word2)}`}`;
-    this.frequentKeyWordsContainer.innerHTML = str;
+    if (!word1) {
+      this.keyWordsPargaph.classList.add('saved-articles__subtitle_none');
+    } else {
+      this.keyWordsPargaph.classList.remove('saved-articles__subtitle_none');
+      const str = `${capitalize(word1)}${word2 !== undefined ? `, ${capitalize(word2)}` : ''}`;
+      this.frequentKeyWordsContainer.innerHTML = str;
+    }
   }
 
   setKeyWordCounter(number) {

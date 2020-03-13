@@ -24,9 +24,12 @@ export default class MainApi {
         'Content-Type': 'application/json',
       },
     })
-      .then((response) => response.json())
-      .then((data) => data)
-      .catch((err) => err);
+      .then((res) => {
+        if (!res.ok) {
+          return Promise.reject(res.status);
+        }
+        return res.json();
+      });
   }
 
   signin(user) {
@@ -41,26 +44,12 @@ export default class MainApi {
         'Content-Type': 'application/json',
       },
     })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
+      .then((res) => {
+        if (!res.ok) {
+          return Promise.reject(res.status);
         }
-        console.log('first then block');
-        throw Error(response.json());
-      })
-      .catch((err) => {
-        console.log('catch block');
-        // console.log(err);
-        return err;
+        return res.json();
       });
-    // .then((data) => {
-    //   console.log(data);
-    //   return data;
-    // })
-    // .catch((err) => {
-    //   console.log(err);
-    //   return err;
-    // });
   }
 
   getUserData() {
@@ -72,9 +61,12 @@ export default class MainApi {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     })
-      .then((response) => response.json())
-      .then((data) => data)
-      .catch((err) => err);
+      .then((res) => {
+        if (!res.ok) {
+          return Promise.reject(res.statusText);
+        }
+        return res.json();
+      });
   }
 
   getArticles() {
@@ -86,9 +78,12 @@ export default class MainApi {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     })
-      .then((response) => response.json())
-      .then((data) => data)
-      .catch((err) => err);
+      .then((res) => {
+        if (!res.ok) {
+          return Promise.reject(res.statusText);
+        }
+        return res.json();
+      });
   }
 
   createArticle(card) {
@@ -109,9 +104,12 @@ export default class MainApi {
         image: card.urlToImage,
       }),
     })
-      .then((response) => response.json())
-      .then((data) => data)
-      .catch((err) => err);
+      .then((res) => {
+        if (!res.ok) {
+          return Promise.reject(res.statusText);
+        }
+        return res.json();
+      });
   }
 
   removeArticle(id) {
@@ -123,8 +121,11 @@ export default class MainApi {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     })
-      .then((response) => response.json())
-      .then((data) => data)
-      .catch((err) => err);
+      .then((res) => {
+        if (!res.ok) {
+          return Promise.reject(res.statusText);
+        }
+        return res.json();
+      });
   }
 }

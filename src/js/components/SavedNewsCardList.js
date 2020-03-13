@@ -12,11 +12,11 @@ export default class SavedNewsCardList extends NewsCardList {
   }
 
   showEmpty() {
-    this.state.classlist.add('saved-articles__results_empty');
+    this.state.classList.add('saved-articles__results_empty');
   }
 
   hideEmpty() {
-    this.state.classlist.remove('saved-articles__results_empty');
+    this.state.classList.remove('saved-articles__results_empty');
   }
 
   renderResult() {
@@ -24,6 +24,7 @@ export default class SavedNewsCardList extends NewsCardList {
   }
 
   removeById(cardId) {
+    this.remove
     document.getElementById(cardId).remove();
   }
 }
