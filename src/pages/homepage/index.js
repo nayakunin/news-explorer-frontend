@@ -74,6 +74,7 @@ search.btn.addEventListener('click', async (event) => {
   if (search.inputValid()) {
     try {
       const cards = await newsApi.getNews(search.input);
+      console.log(cards);
       const newsCards = [];
       for (let i = 0; i < cards.length; i += 1) {
         newsCards.push(new NewsCard(cards[i], i));
@@ -122,6 +123,7 @@ search.btn.addEventListener('click', async (event) => {
         });
       }
     } catch (err) {
+      console.log(err);
       newsCardList.renderError();
     }
   }

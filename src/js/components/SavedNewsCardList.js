@@ -20,11 +20,8 @@ export default class SavedNewsCardList extends NewsCardList {
   }
 
   renderResult() {
-    this.container.insertAdjacentHTML('afterbegin', this.cardsArray.reduce((acc, card) => acc + card.markup, '\n'));
-  }
-
-  removeById(cardId) {
-    this.remove
-    document.getElementById(cardId).remove();
+    this.cardsArray.forEach((card) => {
+      this.container.insertAdjacentHTML('beforeend', card.markup);
+    });
   }
 }

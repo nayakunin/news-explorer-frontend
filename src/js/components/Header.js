@@ -23,7 +23,7 @@ export default class Header {
 
   render() {
     if (localStorage.getItem('userName')) {
-      this.userName.innerHTML = localStorage.getItem('userName');
+      this.userName.textContent = localStorage.getItem('userName');
       document.body.classList.add('body_auth');
       document.body.classList.remove('body_noauth');
     }

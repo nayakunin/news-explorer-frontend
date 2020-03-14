@@ -18,7 +18,7 @@ export default class MainPageNewsCardList extends NewsCardList {
   initialRender() {
     this.state.classList.remove('results_hidden');
     this.state.classList.remove('results_loading');
-    this.clearResult();
+    while (this.container.firstChild) this.container.removeChild(this.container.firstChild);
   }
 
   removeAllStates() {
@@ -37,7 +37,6 @@ export default class MainPageNewsCardList extends NewsCardList {
       i += 1) {
       this.container.insertAdjacentHTML('beforeend', this.cardsArray[i].markup);
     }
-    // this.container.innerHTML = this.cardsArray.reduce((acc, card) => acc + card.markup, '\n');
   }
 
   renderLoader() {

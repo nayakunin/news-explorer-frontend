@@ -14,11 +14,12 @@ export default class Stats {
   }
 
   setUserName(newName) {
-    this.userName.innerHTML = capitalize(newName);
+    this.userName.textContent = capitalize(newName);
   }
 
   setCounter(number) {
-    this.articleCounterContiner.innerHTML = parseArticleCounter(number);
+    this.articleCounterContiner.textContent = '';
+    this.articleCounterContiner.insertAdjacentHTML('afterbegin', parseArticleCounter(number));
   }
 
   setFrequentKeyWords(word1, word2) {
@@ -27,14 +28,14 @@ export default class Stats {
     } else {
       this.keyWordsPargaph.classList.remove('saved-articles__subtitle_none');
       const str = `${capitalize(word1)}${word2 !== undefined ? `, ${capitalize(word2)}` : ''}`;
-      this.frequentKeyWordsContainer.innerHTML = str;
+      this.frequentKeyWordsContainer.textContent = str;
     }
   }
 
   setKeyWordCounter(number) {
     if (number > 0) {
       this.keyWordCounterContainer.classList.remove('saved-articles__more-themes_hidden');
-      this.keyWordCounter.innerHTML = parseKeyWordCouner(number);
+      this.keyWordCounter.textContent = parseKeyWordCouner(number);
     } else {
       this.keyWordCounterContainer.classList.add('saved-articles__more-themes_hidden');
     }
