@@ -54,19 +54,15 @@ popup.linkToProceedLogin.addEventListener('click', () => {
   popup.switchContent('login');
 });
 
-popup.closeBtn.addEventListener('click', () => {
-  popup.close();
-  formLogin.clear();
-  formSignUp.clear();
-  formLogin.submitBtn.classList.add('popup__button_disabled');
-  formSignUp.submitBtn.classList.add('popup__button_disabled');
-});
-
-popup.popupBg.addEventListener('click', () => {
-  popup.close();
-  formLogin.clear();
-  formSignUp.clear();
-  this.submitBtn.classList.add('popup__button_disabled');
+popup.popup.addEventListener('click', (event) => {
+  if (event.target === popup.closeBtn
+    || event.target === popup.popupBg) {
+    popup.close();
+    formLogin.clear();
+    formSignUp.clear();
+    formLogin.submitBtn.classList.add('popup__button_disabled');
+    formSignUp.submitBtn.classList.add('popup__button_disabled');
+  }
 });
 
 search.btn.addEventListener('click', async (event) => {
@@ -74,7 +70,6 @@ search.btn.addEventListener('click', async (event) => {
   if (search.inputValid()) {
     try {
       const cards = await newsApi.getNews(search.input);
-      console.log(cards);
       const newsCards = [];
       for (let i = 0; i < cards.length; i += 1) {
         newsCards.push(new NewsCard(cards[i], i));

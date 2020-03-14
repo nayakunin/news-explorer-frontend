@@ -37,7 +37,6 @@ export default class NewsApi {
     try {
       const results = await this._loadCards();
       this._pageCounter += 1;
-      console.log(results);
       return results;
     } catch (err) {
       console.log(err);
