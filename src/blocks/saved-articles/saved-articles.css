@@ -10,6 +10,10 @@
 @import url('./__themes-first/saved-articles__themes-first.css');
 @import url('./__card-button-container/saved-articles__card-button-container.css');
 @import url('./__card-button/saved-articles__card-button.css');
+@import url('./__response-subtitle/saved-articles__response-subtitle.css');
+@import url('./__response-image/saved-articles__response-image.css');
+@import url('./__empty-response/saved-articles__empty-response.css');
+@import url('./__more-themes/saved-articles__more-themes.css');
 
 .saved-articles {
   padding-top: 80px;
