@@ -1,0 +1,8 @@
+@import url('./_auth/body_auth.css');
+@import url('./_noauth/body_noauth.css');
+@import url('./_popup-active/body__popup-active.css');
+
+.body {
+  position: relative;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}

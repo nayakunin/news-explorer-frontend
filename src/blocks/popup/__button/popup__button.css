@@ -1,0 +1,14 @@
+@import url('./_clicked/popup__button_clicked.css');
+@import url('./_disabled/popup__button_disabled.css');
+
+.popup__button {
+  width: 100%;
+  height: 64px;
+  background: #2F71E5;
+  color: #FFFFFF;
+}
+
+.popup__button:hover {
+  background: #347EFF;
+}
+

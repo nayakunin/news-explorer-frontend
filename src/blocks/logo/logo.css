@@ -1,0 +1,25 @@
+@import url('./_black/logo_black.css');
+
+.logo {
+  font-family: Roboto Slab, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: #fff;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+}
+
+.header_dropdown-active .logo{
+  color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+  .logo {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

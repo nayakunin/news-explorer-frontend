@@ -1,0 +1,3 @@
+.card__button-outline.card__button-outline_active,.card__button-container:hover .card__button-outline.card__button-outline_active {
+  stroke: #2F71E5;
+}

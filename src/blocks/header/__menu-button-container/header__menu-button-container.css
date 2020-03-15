@@ -1,0 +1,13 @@
+.header__menu-button-container {
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 4;
+}
+
+@media only screen and (max-width: 600px) {
+  .header__menu-button-container {
+    display: flex;
+  }
+}

@@ -1,0 +1,21 @@
+.footer__link-wrapper:last-of-type {
+  margin-left: 30px;
+}
+
+.footer__link-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .footer__link-wrapper:last-of-type {
+    margin-left: 15px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .footer__link-wrapper:last-of-type {
+    margin: 30px 0 0;
+  }
+}

@@ -1,0 +1,9 @@
+.about__info {
+  margin-top: 50px;
+}
+
+@media only screen and (max-width: 900px) {
+  .about__info {
+    margin-top: 0;
+  }
+}

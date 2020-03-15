@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Nikita Yakunin">
+  <meta name="description" content="News-explorer app">
+  <link rel="icon" href="<%=require('../../images/favicon.png').default%>">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.homepage.css %>">
+  <title>News Explorer</title>
+</head>
+
+<!-- Чтобы открыть попап нужно добавить класс body_popup-active -->
+<body class="body body_noauth">
+  <header class="header">
+    <div class="header__dropdown-bg"></div>
+    <div class="header__logo-container">
+      <a href="index.html" class="logo">NewsExplorer</a>
+    </div>
+    <div class="header__left">
+      <ul class="header__links-container">
+        <li class="header__link header__link_active"><a href="index.html" class="header__link-text">Главная</a></li>
+        <li class="header__link header__link_auth"><a href="saved-news.html" class="header__link-text">Сохраненные статьи</a></li>
+      </ul>
+      <div class="header__button-container header__button-container_noauth">
+        <button class="button header__button header__button_noauth">Авторизоваться</button>
+      </div>
+      <div class="header__button-container header__button-container_auth">
+        <button class="button header__button header__button_auth">
+          <span class="header__username">Грета</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M10 6L6 6L6 18H10V20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H10V6ZM17.5856 13L13.2927 17.1339L14.707 18.4958L21.4141 12.0371L14.707 5.57837L13.2927 6.9402L17.5856 11.0741H8V13H17.5856Z"
+              fill="white" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="header__menu-button-container">
+      <div class="header__menu-button header__menu-button_open">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="8" width="16" height="2" fill="white" />
+          <rect x="4" y="14" width="16" height="2" fill="white" />
+        </svg>
+      </div>
+      <div class="header__menu-button header__menu-button_close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M13.4142 12L18.7071 17.2928L17.2929 18.7071L11.2929 12.7071C10.9024 12.3165 10.9024 11.6834 11.2929 11.2928L17.2929 5.29285L18.7071 6.70706L13.4142 12Z"
+            fill="white" />
+          <path
+            d="M10.8787 12L5.58577 17.2928L6.99999 18.7071L13 12.7071C13.3905 12.3165 13.3905 11.6834 13 11.2928L6.99999 5.29285L5.58577 6.70706L10.8787 12Z"
+            fill="white" />
+        </svg>
+      </div>
+    </div>
+  </header>
+  <section class="search">
+    <div class="search__container">
+      <h1 class="search__title">Что в мире<br>творится?</h1>
+      <p class="search__description">Находите самые свежие статьи на любую тему и схораняйте в своем личном кабинете</p>
+      <form class="search__input-container">
+        <div class="search__input-wrapper">
+          <input required type="search" name="search" class="search__input" placeholder="Введите тему новости">
+        </div>
+        <button type="submit" class="button button_default search__button">Искать</button>
+      </form>
+    </div>
+  </section>
+  <section class="about">
+    <div class="about__container">
+      <picture class="about__image-container">
+        <img src="./images/image-03.jpg" alt="Аватар" class="about__image">
+      </picture>
+      <div class="about__info-container">
+        <div class="about__info">
+          <h2 class="about__title">Об авторе</h2>
+          <p class="about__text">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы
+            занимаетесь, какими технологиями разработки владеете.</p>
+          <p class="about__text">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем
+            можете помочь потенциальным заказчикам.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__copy">
+        <p class="footer__copy-text">&copy; 2020 Supersite, Powered by News API</p>
+      </div>
+      <div class="footer__links-container">
+        <ul class="footer__nav">
+          <li class="footer__link-wrapper"><a href="index.html" class="footer__link">Главная</a></li>
+          <li class="footer__link-wrapper"><a href="https://praktikum.yandex.ru/" class="footer__link">Яндекс.Практикум</a></li>
+        </ul>
+        <div class="footer__social-container">
+          <a href="https://github.com/nayakunin" class="footer__social-item">
+            <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M10.9998 0.894714C5.41678 0.894714 0.894531 5.42316 0.894531 11C0.894531 15.4664 3.7915 19.2504 7.80507 20.5904C8.30754 20.6834 8.49364 20.3732 8.49364 20.1003C8.49364 19.8584 8.48744 19.2256 8.48123 18.382C5.67111 18.9899 5.07559 17.0296 5.07559 17.0296C4.61654 15.8634 3.95278 15.5532 3.95278 15.5532C3.03469 14.9267 4.02102 14.9391 4.02102 14.9391C5.03217 15.0135 5.57186 15.9813 5.57186 15.9813C6.47135 17.5259 7.93534 17.0793 8.51225 16.8187C8.6053 16.1674 8.86584 15.7207 9.15119 15.4664C6.90558 15.2121 4.54831 14.3436 4.54831 10.4727C4.54831 9.36849 4.93912 8.46901 5.59047 7.76183C5.48501 7.50749 5.13762 6.47773 5.68972 5.08818C5.68972 5.08818 6.53958 4.81523 8.46882 6.12414C9.27526 5.90082 10.1375 5.78916 10.9998 5.78296C11.8559 5.78916 12.7243 5.90082 13.5308 6.12414C15.46 4.81523 16.3099 5.08818 16.3099 5.08818C16.862 6.47773 16.5146 7.50749 16.4091 7.76183C17.0543 8.46901 17.4451 9.36849 17.4451 10.4727C17.4451 14.356 15.0816 15.2059 12.8298 15.4602C13.1896 15.7704 13.5184 16.3907 13.5184 17.3336C13.5184 18.6859 13.5059 19.7715 13.5059 20.1065C13.5059 20.3794 13.6858 20.6896 14.2007 20.5904C18.2143 19.2504 21.1051 15.4664 21.1051 11.0062C21.1051 5.42316 16.5828 0.894714 10.9998 0.894714Z"
+                fill="#191717" />
+            </svg>
+          </a>
+          <a href="https://vk.com/nurtes" class="footer__social-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M18.8958 0H1.10417C0.494167 0 0 0.494167 0 1.10417V18.8967C0 19.5058 0.494167 20 1.10417 20H10.6833V12.255H8.07667V9.23667H10.6833V7.01083C10.6833 4.4275 12.2608 3.02083 14.5658 3.02083C15.67 3.02083 16.6183 3.10333 16.895 3.14V5.84L15.2967 5.84083C14.0433 5.84083 13.8008 6.43667 13.8008 7.31V9.2375H16.79L16.4008 12.2558H13.8008V20H18.8975C19.5058 20 20 19.5058 20 18.8958V1.10417C20 0.494167 19.5058 0 18.8958 0V0Z"
+                fill="black" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- popup__state_login / popup__state_register / popup__state_info -->
+  <div class="popup popup__state popup__state_login">
+    <div class="popup__bg"></div>
+    <div class="popup__container">
+      <div class="popup__close-btn-container popup__close-btn"></div>
+      <div class="popup__content popup__content_login">
+        <h2 class="popup__title">Вход</h2>
+        <form class="popup__form">
+          <div class="popup__inputs-wrapper">
+            <div class="popup__input-container">
+              <label class="popup__input-label" for="login-email">Email</label>
+              <input pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required type="email" name="email" class="popup__input popup__input_email" id="login-email"
+                placeholder="Введите почту">
+              <p class="popup__input-error popup__input-error_email">Неправильный формат email
+              </p>
+            </div>
+            <div class="popup__input-container">
+              <label class="popup__input-label" for="login-password">Пароль</label>
+              <input required type="password" name="password" class="popup__input popup__input_password" id="login-password"
+                placeholder="Введите пароль">
+              <p class="popup__input-error popup__input-error_password">Обязательное поле</p>
+            </div>
+          </div>
+          <div class="popup__button-container">
+            <button type="submit" class="button button_default button_submit popup__button popup__button_disabled">Войти</button>
+          </div>
+        </form>
+        <p class="popup__text">или <span class="popup__link">Зарегистрироваться</span></p>
+      </div>
+      <div class="popup__content popup__content_register popup__content_hidden">
+        <h2 class="popup__title">Регистрация</h2>
+        <form class="popup__form">
+          <div class="popup__inputs-wrapper">
+            <div class="popup__input-container">
+              <label class="popup__input-label" for="reg-email">Email</label>
+              <input pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required type="email" name="email" class="popup__input popup__input_email" id="reg-email"
+                placeholder="Введите почту">
+              <p class="popup__input-error popup__input-error_email">Неправильный формат email</p>
+            </div>
+            <div class="popup__input-container">
+              <label class="popup__input-label" for="reg-password">Пароль</label>
+              <input required minlength="8" type="password" name="password" class="popup__input popup__input_password" id="reg-password"
+                placeholder="Введите пароль">
+              <p class="popup__input-error popup__input-error_password">Не меньше 8 символов</p>
+            </div>
+            <div class="popup__input-container">
+              <label class="popup__input-label" for="reg-username">Имя</label>
+              <input required minlength="2" maxlength="30" type="text" name="username" class="popup__input popup__input_username" id="reg-username"
+                placeholder="Введите своё имя">
+              <p class="popup__input-error popup__input-error_username">Ошибка</p>
+            </div>
+          </div>
+          <div class="popup__button-container">
+            <p class="popup__button-message">Пользователь с таким именем уже есть</p>
+            <button type="submit" class="button button_default button_submit popup__button popup__button_disabled">Зарегистрироваться</button>
+          </div>
+        </form>
+        <p class="popup__text">или <span class="popup__link">Войти</span></p>
+      </div>
+      <div class="popup__content popup__content_info popup__content_hidden">
+        <h2 class="popup__title">Пользователь успешно зарегистрирован</h2>
+        <div class="popup__link-container">
+          <span class="popup__link">Выполнить вход</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="<%= htmlWebpackPlugin.files.chunks.homepage.entry %>"></script>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+.header__username-btn {
+  fill: #1A1B22;
+}
+
+.header_dropdown-active .header__username-btn {
+  fill: #fff;
+}

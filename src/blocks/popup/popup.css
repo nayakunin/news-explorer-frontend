@@ -1,0 +1,40 @@
+@import url('./__button/popup__button.css');
+@import url('./__close-btn/popup__close-btn.css');
+@import url('./__container/popup__container.css');
+@import url('./__content/popup__content.css');
+@import url('./__form/popup__form.css');
+@import url('./__input-label/popup__input-label.css');
+@import url('./__input/popup__input.css');
+@import url('./__link/popup__link.css');
+@import url('./__text/popup__text.css');
+@import url('./__title/popup__title.css');
+@import url('./__input-error/popup__input-error.css');
+@import url('./__input-container/popup__input-contianer.css');
+@import url('./__inputs-wrapper/popup__inputs-wrapper.css');
+@import url('./__button-container/popup__button-container.css');
+@import url('./__link-container/popup__link-container.css');
+@import url('./_hidden/popup_hidden.css');
+@import url('./__close-btn-container/popup__close-btn-container.css');
+@import url('./__state/popup__state.css');
+@import url('./__bg/popup__bg.css');
+@import url('./__button-message/popup__button-message.css');
+
+.body_popup-active .popup {
+  display: flex;
+}
+
+.popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.body_popup-active .popup {
+  position: fixed;
+}

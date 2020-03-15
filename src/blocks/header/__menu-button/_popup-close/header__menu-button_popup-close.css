@@ -1,0 +1,7 @@
+.body_popup-active .header__menu-button_popup-close {
+  display: block;
+}
+
+.header__menu-button_popup-close {
+  display: none;
+}

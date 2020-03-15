@@ -1,0 +1,6 @@
+.header__logo-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 4;
+}

@@ -1,0 +1,7 @@
+.results_loading .results__preloader-container.results__preloader-container_loading {
+  display: flex;
+}
+
+.results__preloader-container.results__preloader-container_loading {
+  display: none;
+}

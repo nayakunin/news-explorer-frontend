@@ -1,0 +1,15 @@
+@import url('./_auth/header__button-container_auth.css');
+@import url('./_noauth/header__button-container_noauth.css');
+
+.header__button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .header__button-container {
+    position: relative;
+    z-index: 2;
+  }
+}

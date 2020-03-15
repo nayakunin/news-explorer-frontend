@@ -1,0 +1,14 @@
+@import url('./_hidden/card__button-popup_hidden.css');
+
+.card__button-popup {
+  height: 40px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 0 12px 0;
+  transition: .3s all;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

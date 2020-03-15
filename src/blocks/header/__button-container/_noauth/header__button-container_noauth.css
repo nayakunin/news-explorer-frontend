@@ -1,0 +1,7 @@
+.body_noauth .header__button-container.header__button-container_noauth {
+  display: flex;
+}
+
+.header__button-container.header__button-container_noauth {
+  display: none;
+}

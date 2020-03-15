@@ -1,0 +1,24 @@
+.saved-articles__card-button {
+  margin-left: 5px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .saved-articles__card-button {
+    margin-left: 0;
+    margin-bottom: 5px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .saved-articles__card-button {
+    margin-bottom: 0;
+    margin-left: 5px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .saved-articles__card-button {
+    margin-left: 0;
+    margin-bottom: 5px;
+  }
+}

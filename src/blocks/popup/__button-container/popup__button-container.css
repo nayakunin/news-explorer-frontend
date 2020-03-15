@@ -1,0 +1,11 @@
+.popup__button-container {
+  position: relative;
+  width: 100%;
+  margin-top: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+  .popup__button-container {
+    margin-top: 24px;
+  }
+}

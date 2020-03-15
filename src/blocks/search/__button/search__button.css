@@ -1,0 +1,33 @@
+.search__button {
+  background: #2F71E5;
+  height: 64px;
+  color: #fff;
+  position: absolute;
+  right: -1px;
+  width: 168px;
+  transition: .3s all;
+}
+
+.search__button:hover {
+  background: #347EFF;
+}
+
+.search__button:focus {
+  background: #2A65CC;
+}
+
+@media only screen and (max-width: 768px) {
+  .search__button {
+    height: 56px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .search__button {
+    position: relative;
+    width: 100%;
+    top: 0;
+    right: 0;
+    height: 56px;
+  }
+}

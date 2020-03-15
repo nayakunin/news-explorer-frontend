@@ -1,0 +1,7 @@
+.popup__state_login .popup__content_login {
+  display: block;
+}
+
+.popup__content_login {
+  display: none;
+}

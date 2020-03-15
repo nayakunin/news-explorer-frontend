@@ -1,0 +1,9 @@
+@import url('./_active/card__button-outline_active.css');
+
+.card__button-outline {
+  stroke: #B6BCBF;
+}
+
+.card__button-container:hover .card__button-outline {
+  stroke: #1A1B22;
+}

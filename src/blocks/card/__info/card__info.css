@@ -1,0 +1,9 @@
+.card__info {
+  padding: 20px 24px 62px;
+}
+
+@media only screen and (max-width: 768px) {
+  .card__info {
+    padding: 16px 16px 48px;
+  }
+}

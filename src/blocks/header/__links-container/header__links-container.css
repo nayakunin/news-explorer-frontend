@@ -1,0 +1,21 @@
+.header__links-container {
+  margin: 0;
+  margin-right: 32px;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .header__links-container {
+    margin-right: 0;
+    position: relative;
+    z-index: 2;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
