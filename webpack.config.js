@@ -8,7 +8,6 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 module.exports = {
   entry: {
     homepage: './src/pages/homepage/index.js',
-    results: './src/pages/results/results.js',
     savedNews: './src/pages/saved-news/saved-news.js'
   },
   output: {
@@ -58,11 +57,6 @@ module.exports = {
       inject: false,
       template: './src/pages/homepage/index.html',
       filename: 'index.html'
-    }),
-    new HtmlWebpackPlugin({
-      inject: false,
-      template: './src/pages/results/results.html',
-      filename: 'results.html'
     }),
     new HtmlWebpackPlugin({
       inject: false,

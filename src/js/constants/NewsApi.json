@@ -1,0 +1,5 @@
+{
+  "baseUrl": "http://newsapi.org/v2/everything?",
+  "language": "ru",
+  "apiKey": "118eb65ee44d4f41b692570db5e71bd0"
+}
