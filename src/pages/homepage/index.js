@@ -120,7 +120,6 @@ search.btn.addEventListener('click', async (event) => {
         });
       }
     } catch (err) {
-      console.log(err);
       newsCardList.renderError();
     }
   }
