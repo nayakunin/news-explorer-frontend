@@ -1,5 +1,7 @@
 import './index.css';
 import '../../images/image-03.jpg';
+import '../../images/image-03-232x232.png';
+import '../../images/image-03-272x272.png';
 import '../../images/not-found_v1.png';
 import '../../images/favicon.png';
 
